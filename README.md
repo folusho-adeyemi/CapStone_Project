@@ -16,7 +16,7 @@
         - Demographics: Age range 18-35, both genders.
         - Characteristics: Keeps up with fashion trends, enjoys exploring different styles, seeks convenience in shopping.
         - Goals: Discover new fashion brands, stay updated on the latest trends, easily browse and shop for fashionable items.
-        - 
+          
     - <b> Busy Professional</b>
     
         - Demographics: Age range 25-45, both genders.
