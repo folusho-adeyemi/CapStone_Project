@@ -1,6 +1,6 @@
 # Project
 # FashionConnect App
-## User Stories:
+
 - ### User Roles:
 
     - <b>Fashion Enthusiast
