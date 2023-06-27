@@ -21,7 +21,7 @@
     
         - Demographics: Age range 25-45, both genders.
         - Characteristics: Limited time for shopping, values efficiency and convenience.
-        - Goals: Find and purchase fashion items quickly, access a wide range of brands in one place, track orders easily.
+        - Goals: Find and store fashion items quickly, access a wide range of brands in one place easily.
           
     - <b>Fashion Influencer/Blogger</b>
     
@@ -33,7 +33,7 @@
     
         - Demographics: Age range 18-40, both genders.
         - Characteristics: Shows loyalty to specific fashion brands, prefers personalized shopping experiences.
-        - Goals: Easily access and purchase items from favorite brands, receive personalized recommendations and offers.
+        - Goals: Easily access and save items from favorite brands, receive personalized recommendations and offers.
 
     - <b> Fashion Conscious Shopper</b>
     
@@ -48,13 +48,26 @@
         - Goals: Find diverse fashion items suitable for gifting, easily browse and compare gift options.
 -   ### User Stories:
 
-    - As a fashion enthusiast, I want to browse and explore a wide range of fashion brands in one place, so I can easily discover new styles and trends without having to visit multiple websites.
-    - As a user, I want to be able to search for specific fashion items or brands, so I can quickly find the products I'm looking for and compare prices and styles.
-    - As a shopper, I want to be able to add items from different brands to my shopping cart, so I can conveniently collect everything I want to purchase in one place before proceeding to checkout.
-    - As a user, I want to have a personalized account where I can save my favorite brands, track my orders, and receive notifications about new arrivals or exclusive offers.
-    - As a busy individual, I want a simplified and secure checkout process, where I can enter my payment and shipping information just once, and have it applied to purchases from multiple brands.
-    - As a shopper, I want to be able to track the status of my orders, including shipping updates and estimated delivery dates, so I can stay informed about my purchases.
-    - As a fashion-conscious user, I want to have access to detailed product descriptions, high-quality images, and customer reviews, so I can make informed decisions about my purchases.
-    - As a user, I want the app to provide personalized recommendations based on my browsing history, previous purchases, and style preferences, so I can discover relevant products and brands tailored to my taste.
-    - As a user, I want the app to have a seamless and intuitive interface, with clear navigation and filters, so I can easily browse through different categories, refine my search, and find the products I desire.
-    - As a socially responsible shopper, I want to have information about the sustainability practices of the brands available on the app, so I can make eco-friendly choices and support ethical fashion.
+    ### Shopping
+    
+    - As a user, I should be able to browse products for a given brand.
+    - As a user, I should be able to search for a given product of a given brand.
+    
+    ### Account Management
+    
+    - As a user, I should be able to create an account with a username and password.
+    - As a user, I should be able to manage my account/profile, including changing password, editing first name, last name, etc.
+    - As a user, I should be able to see my saved collections and make changes as necessary.
+    
+    ### Collections
+    
+    - As a user, I should be able to add products to my collection.
+    - As a user, I should be able to save multiple collections to my account.
+
+
+    ## Stretch Features
+
+1. **Profile Picture:** Allow users to upload and display their profile picture for a more personalized profile.
+
+2. **Social Media Integration / Cross-Platform Sharing:** Implement social media sharing functionality, allowing users to share their favorite products or collections on platforms like Instagram, Facebook, or Twitter.
+
