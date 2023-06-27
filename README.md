@@ -46,18 +46,22 @@
         - Demographics: Age range 25-55, both genders.
         - Characteristics: Buys fashion items as gifts for others, prefers a wide variety of options.
         - Goals: Find diverse fashion items suitable for gifting, easily browse and compare gift options.
+          
 -   ### User Stories:
 
     ### Shopping/Browsing
     
     - As a user, I should be able to browse products for a given brand.
     - As a user, I should be able to search for a given product of a given brand.
+    - As a user, I should be able to view detailed product information including descriptions, images, and customer reviews.
     
     ### Account Management
     
     - As a user, I should be able to create an account with a username and password.
     - As a user, I should be able to manage my account/profile, including changing password, editing first name, last name, etc.
     - As a user, I should be able to see my saved collections and make changes as necessary.
+    - As a user, I should be able to reset my password in case I forget it.
+    - As a user, I should be able to view and edit my shipping and billing information.
     
     ### Collections
     
