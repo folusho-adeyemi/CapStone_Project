@@ -48,7 +48,7 @@
         - Goals: Find diverse fashion items suitable for gifting, easily browse and compare gift options.
 -   ### User Stories:
 
-    ### Shopping
+    ### Shopping/Browsing
     
     - As a user, I should be able to browse products for a given brand.
     - As a user, I should be able to search for a given product of a given brand.
