@@ -75,7 +75,16 @@
 
 2. **Social Media Integration / Cross-Platform Sharing:** Implement social media sharing functionality, allowing users to share their favorite products or collections on platforms like Instagram, Facebook, or Twitter.
 
-### WIREFRAME
-![image](https://github.com/folusho-adeyemi/CapStone_Project/assets/98936202/3b7386a9-5f54-4f02-9494-8cb1d8706633)
+
+## Pages
+<b>HOME Page</b>
+
+<b>ITEMS PAGE</b>
+
+<b>COLLECTIONS PAGE</b>
+
+## WIREFRAME
+![image](https://github.com/folusho-adeyemi/CapStone_Project/assets/98936202/e802dd3e-319a-44b9-979b-b08e51eb908f)
+
 
 
