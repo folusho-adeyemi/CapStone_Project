@@ -77,11 +77,23 @@
 
 
 ## Pages
-<b>HOME Page</b>
+- Home
+- Profile
+- Suggested Listings
+- Collection Page
 
-<b>ITEMS PAGE</b>
+## Categories
+- Women's Clothing
+- Men's Clothing
+- Shoes
 
-<b>COLLECTIONS PAGE</b>
+## API Endpoints
+
+- User Registration and Authentication
+- Candidate Endpoint
+- Price Tracking Endpoint
+
+
 
 ## WIREFRAME
 ![image](https://github.com/folusho-adeyemi/CapStone_Project/assets/98936202/e802dd3e-319a-44b9-979b-b08e51eb908f)
