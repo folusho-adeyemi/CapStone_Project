@@ -1,0 +1,103 @@
+[
+    {
+      "ProductID": 1,
+      "Name": "Floral Print Maxi Dress",
+      "Description": "A stunning floral print maxi dress with a flowy silhouette.",
+      "Price": "$59.99",
+      "Image_URL": "https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg",
+      "CategoryID": 1,
+      "BrandID": "123",
+      "ReviewID": "r1"
+    },
+    {
+      "ProductID": 2,
+      "Name": "Leather Ankle Boots",
+      "Description": "Trendy leather ankle boots with a sleek design and comfortable fit.",
+      "Price": "$89.99",
+      "Image_URL": "https://example.com/images/ankle-boots.jpg",
+      "CategoryID": 2,
+      "BrandID": "456",
+      "ReviewID": "r2"
+    },
+    {
+      "ProductID": 3,
+      "Name": "Quilted Crossbody Bag",
+      "Description": "A chic quilted crossbody bag with a gold chain strap.",
+      "Price": "$49.99",
+      "Image_URL": "https://example.com/images/crossbody-bag.jpg",
+      "CategoryID": 3,
+      "BrandID": "789",
+      "ReviewID": "r3"
+    },
+    {
+      "ProductID": 4,
+      "Name": "Statement Earrings Set",
+      "Description": "A set of stunning statement earrings to elevate any outfit.",
+      "Price": "$29.99",
+      "Image_URL": "https://example.com/images/statement-earrings.jpg",
+      "CategoryID": 4,
+      "BrandID": "1011",
+      "ReviewID": "r4"
+    },
+    {
+      "ProductID": 5,
+      "Name": "Striped Off-Shoulder Top",
+      "Description": "A trendy off-shoulder top with stylish stripes.",
+      "Price": "$39.99",
+      "Image_URL": "https://example.com/images/off-shoulder-top.jpg",
+      "CategoryID": 5,
+      "BrandID": "1213",
+      "ReviewID": "r5"
+    },
+    {
+      "ProductID": 6,
+      "Name": "Embroidered Midi Dress",
+      "Description": "A beautiful embroidered midi dress perfect for special occasions.",
+      "Price": "$79.99",
+      "Image_URL": "https://example.com/images/embroidered-dress.jpg",
+      "CategoryID": 1,
+      "BrandID": "1415",
+      "ReviewID": "r6"
+    },
+    {
+      "ProductID": 7,
+      "Name": "Sneaker Wedges",
+      "Description": "Comfortable and stylish sneaker wedges for a trendy look.",
+      "Price": "$69.99",
+      "Image_URL": "https://example.com/images/sneaker-wedges.jpg",
+      "CategoryID": 2,
+      "BrandID": "1617",
+      "ReviewID": "r7"
+    },
+    {
+      "ProductID": 8,
+      "Name": "Structured Tote Bag",
+      "Description": "A structured tote bag with plenty of room for your essentials.",
+      "Price": "$59.99",
+      "Image_URL": "https://example.com/images/tote-bag.jpg",
+      "CategoryID": 3,
+      "BrandID": "1819",
+      "ReviewID": "r8"
+    },
+    {
+      "ProductID": 9,
+      "Name": "Layered Pendant Necklace",
+      "Description": "A trendy layered pendant necklace to accessorize any outfit.",
+      "Price": "$24.99",
+      "Image_URL": "https://example.com/images/necklace.jpg",
+      "CategoryID": 4,
+      "BrandID": "2021",
+      "ReviewID": "r9"
+    },
+    {
+      "ProductID": 10,
+      "Name": "Ruffled Blouse",
+      "Description": "A feminine ruffled blouse that adds a touch of elegance.",
+      "Price": "$49.99",
+      "Image_URL": "https://example.com/images/ruffled-blouse.jpg",
+      "CategoryID": 5,
+      "BrandID": "2223",
+      "ReviewID": "r10"
+    }
+  ]
+  

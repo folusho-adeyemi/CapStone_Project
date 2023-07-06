@@ -1,0 +1,28 @@
+[
+    {
+      "CategoryID": 1,
+      "Name": "Dresses",
+      "Image_URL": "https://example.com/images/dresses.jpg"
+    },
+    {
+      "CategoryID": 2,
+      "Name": "Shoes",
+      "Image_URL": "https://example.com/images/shoes.jpg"
+    },
+    {
+      "CategoryID": 3,
+      "Name": "Bags",
+      "Image_URL": "https://example.com/images/bags.jpg"
+    },
+    {
+      "CategoryID": 4,
+      "Name": "Accessories",
+      "Image_URL": "https://example.com/images/accessories.jpg"
+    },
+    {
+      "CategoryID": 5,
+      "Name": "Tops",
+      "Image_URL": "https://example.com/images/tops.jpg"
+    }
+  ]
+  
