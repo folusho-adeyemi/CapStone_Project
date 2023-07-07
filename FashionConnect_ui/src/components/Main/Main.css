@@ -32,45 +32,74 @@
     margin-right: 10px; /* Adjust the margin value as needed */
   }
   
-  .new-post-form,
-  .post {
-    width: 500px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .new-post-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px; /* Adjust the margin value as needed */
-  }
-  
-  .new-post-form input,
-  .new-post-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .new-post-form button {
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .new-post-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .posts-container {
-    display: flex;
-    flex-direction: column;
+  .products-container {
     align-items: center;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    overflow: hidden;
+    grid-gap: 30px;
   }
+  .product{
+    display: flex;
+    flex-direction: grid;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .products-container
+    { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        padding: 10px;
+    }
+}
+@media screen and ( max-width: 900px) {
+    .products-container
+    { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .products-container
+    { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .products-container
+    { 
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        padding: 10px;
+    }
+}
+
+.product{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    font-size: 30;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product-image{
+    border-radius: 20px;
+    border: 1px;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+}
+.product-name{
+    text-align: center;
+}
+.product-price{
+    text-align: center;
+}
