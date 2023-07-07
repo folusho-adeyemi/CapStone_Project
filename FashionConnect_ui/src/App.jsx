@@ -1,76 +1,41 @@
-import { useState ,useEffect} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useState, useEffect } from 'react';
+import { UserContext } from './UserContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './components/Main/Main'
+import LoginForm from './components/LoginForm/LoginForm';
+import SignupForm from './components/SignupForm/SignupForm';
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [users, setUsers] = useState([]);
-  const [formError, setFormError] = useState("");
-  const [form, setForm] = useState({
-    username: '',
-    password: '',
+  const [user, setUser] = useState(() => {
+    // Retrieve the user data from storage or set it to null if not found
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : null;
   });
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch('http://localhost:3000/products');
-      const allUsers = await fetch('http://localhost:3000/users');
-      const data = await response.json();
-      const userData = await allUsers.json();
-      setProducts(data);
-      setUsers(userData)
-    };
-    fetchProducts();
-  }, []);
-
-  const handleOnSubmit = (event) => {
-    if(!form.username || !form.password) {
-        setFormError("Please provide both your username and password");
-    } else {
-        setFormError("");
-    }
-    event.preventDefault()
-  }
-
-  const handleChange = (event) => {
-    setForm({
-      ...form,
-      [event.target.name]: event.target.value,
-    });
+  const updateUser = (newUser) => {
+    setUser(newUser);
   };
 
+  useEffect(() => {
+    // Save the user data to storage whenever the user state changes
+    localStorage.setItem('user', JSON.stringify(user));
+  }, [user]);
+
   return (
-    <div className='app'>
-      <h1>FashionConnect</h1>
-      <div className='login-form'>
-        <form className='user-login'>
-        <input
-          type="text"
-          name="username"
-          placeholder="Enter your username"
-          value={form.username}
-          onChange={handleChange}
-          className='username-form-input'
-        />
-        <input
-          type="text"
-          name="password"
-          placeholder="Enter your password"
-          value={form.password}
-          onChange={handleChange}
-          className='password-form-input'
-        />
-        {formError && <p>{formError}</p>}
-        <button type='submit' className='login-button' 
-        onClick={(event) => handleOnSubmit(event)}>
-          Log in
-          </button>
-        </form>
-      </div>
+    <div className="app">
+      <UserContext.Provider value={{ user, updateUser }}>
+        <BrowserRouter>
+          <Routes>
+            {/* <Route path="/" element={ <Main /> } /> */}
+            <Route path="/" element={user ? <Main /> : <LoginForm />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignupForm />} />
+          </Routes>
+        </BrowserRouter>
+      </UserContext.Provider>
     </div>
-    
-  )
+  );
 }
 
-export default App
+export default App;
