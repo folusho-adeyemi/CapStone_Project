@@ -1,0 +1,83 @@
+[
+    {
+      "UserID": 1,
+      "username": "fashionista123",
+      "email": "fashionista123@example.com",
+      "password": "pass123",
+      "First_Name": "Emma",
+      "Last_Name": "Smith"
+    },
+    {
+      "UserID": 2,
+      "username": "trendyguru",
+      "email": "trendyguru@example.com",
+      "password": "trendy2023",
+      "First_Name": "Oliver",
+      "Last_Name": "Johnson"
+    },
+    {
+      "UserID": 3,
+      "username": "stylediva",
+      "email": "stylediva@example.com",
+      "password": "divastyle123",
+      "First_Name": "Sophia",
+      "Last_Name": "Brown"
+    },
+    {
+      "UserID": 4,
+      "username": "fashionlover",
+      "email": "fashionlover@example.com",
+      "password": "fashion2023",
+      "First_Name": "Ava",
+      "Last_Name": "Davis"
+    },
+    {
+      "UserID": 5,
+      "username": "stylishqueen",
+      "email": "stylishqueen@example.com",
+      "password": "queen123",
+      "First_Name": "Mia",
+      "Last_Name": "Wilson"
+    },
+    {
+      "UserID": 6,
+      "username": "fashionforward",
+      "email": "fashionforward@example.com",
+      "password": "forward2023",
+      "First_Name": "Lucas",
+      "Last_Name": "Taylor"
+    },
+    {
+      "UserID": 7,
+      "username": "glamourous",
+      "email": "glamourous@example.com",
+      "password": "glam2023",
+      "First_Name": "Isabella",
+      "Last_Name": "Anderson"
+    },
+    {
+      "UserID": 8,
+      "username": "trendsetter",
+      "email": "trendsetter@example.com",
+      "password": "setter123",
+      "First_Name": "Liam",
+      "Last_Name": "Thomas"
+    },
+    {
+      "UserID": 9,
+      "username": "chicstyle",
+      "email": "chicstyle@example.com",
+      "password": "chic2023",
+      "First_Name": "Charlotte",
+      "Last_Name": "Roberts"
+    },
+    {
+      "UserID": 10,
+      "username": "fashionaddict",
+      "email": "fashionaddict@example.com",
+      "password": "addict123",
+      "First_Name": "Harper",
+      "Last_Name": "Harris"
+    }
+  ]
+  

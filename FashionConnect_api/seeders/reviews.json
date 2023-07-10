@@ -1,0 +1,63 @@
+[
+    {
+      "ReviewID": "r1",
+      "Text": "I absolutely love this floral maxi dress! It's so comfortable and perfect for summer.",
+      "Score": 5,
+      "ProductID": 1
+    },
+    {
+      "ReviewID": "r2",
+      "Text": "These leather ankle boots are my new favorite shoes. They're stylish and go with everything.",
+      "Score": 4,
+      "ProductID": 2
+    },
+    {
+      "ReviewID": "r3",
+      "Text": "The quilted crossbody bag is my go-to accessory. It's stylish and fits all my essentials.",
+      "Score": 5,
+      "ProductID": 3
+    },
+    {
+      "ReviewID": "r4",
+      "Text": "I can't get enough of these statement earrings. They add the perfect touch of glam to any outfit.",
+      "Score": 5,
+      "ProductID": 4
+    },
+    {
+      "ReviewID": "r5",
+      "Text": "This off-shoulder top is so cute and flattering. It's become a staple in my wardrobe.",
+      "Score": 4,
+      "ProductID": 5
+    },
+    {
+      "ReviewID": "r6",
+      "Text": "The embroidered midi dress is absolutely stunning. I received so many compliments when I wore it.",
+      "Score": 5,
+      "ProductID": 6
+    },
+    {
+      "ReviewID": "r7",
+      "Text": "I love these sneaker wedges! They're comfortable and give me some extra height.",
+      "Score": 4,
+      "ProductID": 7
+    },
+    {
+      "ReviewID": "r8",
+      "Text": "The structured tote bag is perfect for work. It's spacious and stylish.",
+      "Score": 4,
+      "ProductID": 8
+    },
+    {
+      "ReviewID": "r9",
+      "Text": "This layered pendant necklace is so pretty. It adds a touch of elegance to any outfit.",
+      "Score": 5,
+      "ProductID": 9
+    },
+    {
+      "ReviewID": "r10",
+      "Text": "The ruffled blouse is feminine and versatile. It's a great addition to my wardrobe.",
+      "Score": 4,
+      "ProductID": 10
+    }
+  ]
+  
