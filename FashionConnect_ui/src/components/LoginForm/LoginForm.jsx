@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../UserContext.js';
-import './LoginForm.css'
+import './LoginForm.css';
+import "/Users/folushoadeyemiv/Desktop/META/FashionConnect/apple-touch-icon.png";
 
 export default function LoginForm () {
   const [username, setUsername] = useState('');
@@ -46,7 +47,7 @@ export default function LoginForm () {
   return (
     <div className='login-form-container'>
         <div className='logo'>
-       <img src='../FashionConnect/apple-touch-icon.png'></img>
+       <img src='/Users/folushoadeyemiv/Desktop/META/FashionConnect/apple-touch-icon.png'></img>
      </div>
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>

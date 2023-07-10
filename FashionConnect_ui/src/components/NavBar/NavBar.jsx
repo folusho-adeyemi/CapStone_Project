@@ -4,22 +4,18 @@ import { useContext } from "react";
 import { UserContext } from "../../UserContext.js";
 import { Link } from "react-router-dom";
 
+
 export default function NavBar(){
     const { user, updateUser } = useContext(UserContext);
-
+    
     const handleLogout = () => {
         // Perform logout logic here
         // Example: Clear user data from localStorage, reset user state, etc.
         updateUser(null);
       };
+
     return(
         <div className="navbar">
-            <ul className="nav-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Category</Link></li>
-                <li><Link to="/collections">Collections</Link></li>
-                <li><Link to="/profile">Profile</Link></li>
-            </ul>
         <div className="user-info">
           {user ? (
             <>
