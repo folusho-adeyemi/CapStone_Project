@@ -46,7 +46,7 @@ export default function LoginForm () {
   return (
     <div className='login-form-container'>
         <div className='logo'>
-       <img src='/FashionConnect/apple-touch-icon.png'></img>
+       <img src='../FashionConnect/apple-touch-icon.png'></img>
      </div>
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>

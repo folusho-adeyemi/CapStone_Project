@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 .logo {
@@ -43,4 +44,8 @@
 .app {
   display: flex;
   justify-content: center;
+}
+
+.body{
+  background-color: whitesmoke;
 }
