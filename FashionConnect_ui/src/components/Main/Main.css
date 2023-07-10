@@ -1,0 +1,7 @@
+.main {
+    padding-top: 80px; /* Adjust the value to provide enough spacing below the NavBar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }

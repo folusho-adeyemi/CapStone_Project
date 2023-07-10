@@ -15,10 +15,6 @@ export const Collection = sequelize.define('Collection', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  UserID: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
   ProductID: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
     allowNull: false
