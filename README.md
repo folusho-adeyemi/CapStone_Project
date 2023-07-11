@@ -215,5 +215,4 @@
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f62f6752fed94fd5ae44926bf6ddad0e-with-play.gif">
   </a>
 
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/f62f6752fed94fd5ae44926bf6ddad0e?sid=4dd93bd8-36d0-46c0-bde8-5be4f363f36c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
