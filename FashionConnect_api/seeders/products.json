@@ -4,7 +4,7 @@
       "Name": "Floral Print Maxi Dress",
       "Description": "A stunning floral print maxi dress with a flowy silhouette.",
       "Price": "$59.99",
-      "Image_URL": "https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg",
+      "Image_URL": "https://images.asos-media.com/products/asos-design-ruffle-detail-plunge-maxi-dress-with-corsage-in-pink-floral-print/203355709-1-pinkbasedfloral?$n_640w$&wid=513&fit=constrain",
       "CategoryID": 1,
       "BrandID": "123",
       "ReviewID": "r1"
@@ -14,7 +14,7 @@
       "Name": "Leather Ankle Boots",
       "Description": "Trendy leather ankle boots with a sleek design and comfortable fit.",
       "Price": "$89.99",
-      "Image_URL": "https://example.com/images/ankle-boots.jpg",
+      "Image_URL": "https://thursdayboots.com/cdn/shop/products/1024x1024-Women-Combat-Java-081721-Side_768x768.jpg?v=1683319140",
       "CategoryID": 2,
       "BrandID": "456",
       "ReviewID": "r2"
@@ -24,7 +24,7 @@
       "Name": "Quilted Crossbody Bag",
       "Description": "A chic quilted crossbody bag with a gold chain strap.",
       "Price": "$49.99",
-      "Image_URL": "https://example.com/images/crossbody-bag.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/07/11/1657534911dd04239a0b5375bc9585604879574290_thumbnail_600x.jpg",
       "CategoryID": 3,
       "BrandID": "789",
       "ReviewID": "r3"
@@ -34,7 +34,7 @@
       "Name": "Statement Earrings Set",
       "Description": "A set of stunning statement earrings to elevate any outfit.",
       "Price": "$29.99",
-      "Image_URL": "https://example.com/images/statement-earrings.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/09/05/1662342867fe0d83b7c0a8522b7bc3cdcf2da6b063_thumbnail_600x.jpg",
       "CategoryID": 4,
       "BrandID": "1011",
       "ReviewID": "r4"
@@ -44,7 +44,7 @@
       "Name": "Striped Off-Shoulder Top",
       "Description": "A trendy off-shoulder top with stylish stripes.",
       "Price": "$39.99",
-      "Image_URL": "https://example.com/images/off-shoulder-top.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2021/02/04/1612408007b6698bfd16e31c9b0ed916dcb43aeb50_thumbnail_600x.jpg",
       "CategoryID": 5,
       "BrandID": "1213",
       "ReviewID": "r5"
@@ -54,7 +54,7 @@
       "Name": "Embroidered Midi Dress",
       "Description": "A beautiful embroidered midi dress perfect for special occasions.",
       "Price": "$79.99",
-      "Image_URL": "https://example.com/images/embroidered-dress.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/03/29/1648523746a1a487f758d7a0332f3db8a832ba81ef_thumbnail_600x.jpg",
       "CategoryID": 1,
       "BrandID": "1415",
       "ReviewID": "r6"
@@ -64,7 +64,7 @@
       "Name": "Sneaker Wedges",
       "Description": "Comfortable and stylish sneaker wedges for a trendy look.",
       "Price": "$69.99",
-      "Image_URL": "https://example.com/images/sneaker-wedges.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/11/07/16677912459c3e7d608c429bda842967b469994d4d_thumbnail_600x.jpg",
       "CategoryID": 2,
       "BrandID": "1617",
       "ReviewID": "r7"
@@ -74,7 +74,7 @@
       "Name": "Structured Tote Bag",
       "Description": "A structured tote bag with plenty of room for your essentials.",
       "Price": "$59.99",
-      "Image_URL": "https://example.com/images/tote-bag.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/10/26/16667553686a804645bdc1cfe6d7d7a3df24ecdfcf_thumbnail_600x.webp",
       "CategoryID": 3,
       "BrandID": "1819",
       "ReviewID": "r8"
@@ -84,7 +84,7 @@
       "Name": "Layered Pendant Necklace",
       "Description": "A trendy layered pendant necklace to accessorize any outfit.",
       "Price": "$24.99",
-      "Image_URL": "https://example.com/images/necklace.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/12/07/167040681189ad7389758c4267f57b137f90eb6a43_thumbnail_600x.webp",
       "CategoryID": 4,
       "BrandID": "2021",
       "ReviewID": "r9"
@@ -94,7 +94,7 @@
       "Name": "Ruffled Blouse",
       "Description": "A feminine ruffled blouse that adds a touch of elegance.",
       "Price": "$49.99",
-      "Image_URL": "https://example.com/images/ruffled-blouse.jpg",
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/11/07/16677863346ab4b6f65905a30acc3f8f1447b11b5f_thumbnail_600x.jpg",
       "CategoryID": 5,
       "BrandID": "2223",
       "ReviewID": "r10"

@@ -2,27 +2,27 @@
     {
       "CategoryID": 1,
       "Name": "Dresses",
-      "Image_URL": "https://example.com/images/dresses.jpg"
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/06/10/165485598763c2d9fbbd3f3b32df4e0c9550d0cb6a_thumbnail_600x.jpg"
     },
     {
       "CategoryID": 2,
       "Name": "Shoes",
-      "Image_URL": "https://example.com/images/shoes.jpg"
+      "Image_URL": "https://d1fufvy4xao6k9.cloudfront.net/images/landing/hockerty/shoes_special/custom_dress_shoes.jpg"
     },
     {
       "CategoryID": 3,
       "Name": "Bags",
-      "Image_URL": "https://example.com/images/bags.jpg"
+      "Image_URL": "https://www.travelandleisure.com/thmb/RNJ6BkoBY-SP6qmHqqSDd6XuLTU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-Weekender-group-ConorRalph-01.jpg-b29f5dc4860044ba99348a2dc1ed1750.jpg"
     },
     {
       "CategoryID": 4,
       "Name": "Accessories",
-      "Image_URL": "https://example.com/images/accessories.jpg"
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2022/08/23/1661218402368e05181eafad6f915e3d617a8d2234.webp"
     },
     {
       "CategoryID": 5,
       "Name": "Tops",
-      "Image_URL": "https://example.com/images/tops.jpg"
+      "Image_URL": "https://img.ltwebstatic.com/images3_pi/2023/06/13/16866351807301c929c0d9420d9a6a51bef1bc6f1a.webp"
     }
   ]
   

@@ -98,5 +98,7 @@
 ## WIREFRAME
 ![image](https://github.com/folusho-adeyemi/CapStone_Project/assets/98936202/e802dd3e-319a-44b9-979b-b08e51eb908f)
 
-
+## Progress
+# Milestone  1
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/f62f6752fed94fd5ae44926bf6ddad0e?sid=8bed285e-b868-4fe9-a9a4-4b152652a7d1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
