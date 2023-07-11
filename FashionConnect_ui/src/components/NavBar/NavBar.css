@@ -12,16 +12,6 @@
     z-index: 999;
   }
   
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 16px;
-  }
-  
-  .nav-links li {
-    font-size: 16px;
-  }
-  
   .user-info {
     color: #ffffff;
     display: flex;
@@ -72,7 +62,7 @@
     /* New Styles for Mobile */
   
     .navbar {
-      justify-content: center;
+      justify-content: right;
       background-color: #232f3e;
     }
   
