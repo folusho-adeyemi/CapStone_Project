@@ -45,7 +45,7 @@
       padding: 10px;
       width: 100%;
       border: none;
-      background-color: #007bff;
+      background-color: hsl(291, 70%, 40%);
       color: white;
       cursor: pointer;
     }
