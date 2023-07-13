@@ -70,4 +70,31 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
+// Routes for updating user profile
+router.post('/users/profile', async (req, res) => {
+    const {First_Name, Last_Name, username} = req.body;
+    console.log(First_Name, Last_Name)
+    console.log(User);
+    try {
+        
+        const user = await User.findOne({ where: { username: username } }
+        );
+        console.log(user)
+        if (!user){
+            return res.status(404).json({error: "User not found"})
+        }
+
+        user.First_Name = First_Name
+        user.Last_Name = Last_Name
+        await user.save();
+
+        console.log(user)
+
+        res.json({message: "User profile updated successfully"});
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({error: "Server error" });
+      }
+});
+
 export default router;
