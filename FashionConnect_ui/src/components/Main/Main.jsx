@@ -18,8 +18,7 @@ export default function Main() {
     return (
       <div className="main">
         <NavBar />
-        <Products products={products}/>
-        
+        <Products products={products}/>       
       </div>
     )
 }
