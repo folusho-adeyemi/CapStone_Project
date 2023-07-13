@@ -1,6 +1,8 @@
 import express from 'express';
 import session from 'express-session';
 import cors from 'cors';
+import wkx from 'wkx';
+import {Buffer} from 'buffer';
 import morgan from 'morgan';
 import { sequelize } from './database.js';
 import { User, Category, Product, Review, Collection } from './models/index.js';
