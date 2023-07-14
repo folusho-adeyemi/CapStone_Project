@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={user ? <Main /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/profile" element={<ProfileView />} />
+            <Route path="/profile" element={<ProfileView  user={user}/>} />
             <Route path="/editprofile" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>
