@@ -70,7 +70,7 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-// Route for user login
+
 router.post('/users/profile', async (req, res) => {
     const { First_Name, Last_Name, username } = req.body;
   
@@ -79,14 +79,18 @@ router.post('/users/profile', async (req, res) => {
       const user = await User.findOne({ where: { username:username } });
       console.log(user)
   
-      if (!user) {
-        return res.status(401).json({ error: 'Invalid username or password' });
-      }
       user.First_Name =First_Name
       user.Last_Name = Last_Name
       await user.save()
   
       res.json({ message: "User info updated" });
+
+        return res.status(404).json({ error: 'User not found' });
+      }
+  
+      // Return the user data in the response
+      res.json({ message: "User profile uodated succesfully" });
+
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
