@@ -85,7 +85,7 @@ router.post('/users/profile', async (req, res) => {
         res.status(404).json({error: "User does not exist"});
       }
 
-      user.First_Name =First_Name
+      user.First_Name = First_Name
       user.Last_Name = Last_Name
       console.log(user)
       await user.save()
