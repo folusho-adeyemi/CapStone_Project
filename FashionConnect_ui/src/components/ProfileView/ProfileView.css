@@ -1,0 +1,69 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #af73db, #f779b7);
+    color: white;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .greeting {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .welcome-banner {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .details {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .detail-heading {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .detail-value {
+    color: black;
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .edit-link {
+    background-color: whitesmoke;
+    color:#af73db;
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  

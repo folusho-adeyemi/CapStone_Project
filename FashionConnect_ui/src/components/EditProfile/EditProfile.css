@@ -9,7 +9,7 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     padding: 20px;
     border: 1px solid #ffffff;
     border-radius: 20px;

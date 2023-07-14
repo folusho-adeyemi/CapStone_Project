@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { useContext } from "react";
-import { UserContext } from "../../UserContext.js";
+import { UserContext } from "../../UserContext.jsx";
 import { Link } from "react-router-dom";
 
 
