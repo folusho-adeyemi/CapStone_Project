@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './components/Main/Main'
 import LoginForm from './components/LoginForm/LoginForm';
 import SignupForm from './components/SignUpForm/SignupForm';
+import EditProfile from './components/EditProfile/EditProfile';
+import ProfileView from './components/ProfileView/ProfileView';
 
 function App() {
   const [user, setUser] = useState(() => {
@@ -31,6 +33,8 @@ function App() {
             <Route path="/" element={user ? <Main /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
+            <Route path="/profile" element={<ProfileView />} />
+            <Route path="/editprofile" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>

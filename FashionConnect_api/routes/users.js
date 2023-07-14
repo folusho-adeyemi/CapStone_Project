@@ -70,4 +70,30 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
+
+//routes for profile changes
+router.post('/users/profile', async (req, res) => {
+    const { First_Name, Last_Name, username } = req.body;
+  
+    try {
+      // Find the user by username
+      const user = await User.findOne({ where: { username:username } });
+      console.log(user)
+  
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      user.First_Name = First_Name
+      user.Last_Name = Last_Name
+      await user.save()
+  
+      // Return the user data in the response
+      res.json({ message: "User profile uodated succesfully" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+
 export default router;
