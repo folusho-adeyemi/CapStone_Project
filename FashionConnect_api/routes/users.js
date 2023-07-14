@@ -88,10 +88,8 @@ router.post('/users/profile', async (req, res) => {
         return res.status(404).json({ error: 'User not found' });
       }
   
-      // Return the user data in the response
-      res.json({ message: "User profile uodated succesfully" });
 
-    } catch (error) {
+    catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
     }
