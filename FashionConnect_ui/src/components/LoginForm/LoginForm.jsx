@@ -14,6 +14,7 @@ export default function LoginForm () {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    
     try {
       // Make the login API request
       const response = await fetch(`http://localhost:3000/users/login`, {

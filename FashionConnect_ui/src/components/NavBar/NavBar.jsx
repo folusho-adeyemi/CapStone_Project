@@ -21,6 +21,7 @@ export default function NavBar(){
             <>
               <span style={{ color: "white" }}>Hi {user.username}! |</span>
               <button onClick={handleLogout}>Logout</button>
+              <Link to="/profile">Profile</Link>
             </>
           ) : (
             <Link to="/login">Login</Link>
