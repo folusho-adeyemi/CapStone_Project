@@ -80,14 +80,19 @@ router.post('/users/profile', async (req, res) => {
     try {
       // Find the user by username
       const user = await User.findOne({ where: { username:username } });
-      console.log(user)
+
+      if (!user){
+        res.status(404).json({error: "User does not exist"});
+      }
 
       user.First_Name =First_Name
       user.Last_Name = Last_Name
+      console.log(user)
       await user.save()
-
      
-      res.json({ message: "User profile uodated succesfully" });
+
+    console.log(user)
+    res.json({ message:"User info updated", user: user});
 
     } catch (error) {
       console.error(error);
