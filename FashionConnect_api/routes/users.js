@@ -90,7 +90,8 @@ router.post('/users/profile', async (req, res) => {
       await user.save()
   
       // Return the user data in the response
-      res.json({ message: "User profile uodated succesfully" });
+      res.json({ user:user, message: "User profile uodated succesfully" });
+      console.log(res.json({user}))
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
