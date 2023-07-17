@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm/LoginForm';
 import SignupForm from './components/SignUpForm/SignupForm';
 import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
+import Collections from './components/Collections/Collections';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/profile" element={<ProfileView user={user} />} />
+            <Route path="/collections" element={<Collections/>}/>
             <Route path="/editprofile" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>

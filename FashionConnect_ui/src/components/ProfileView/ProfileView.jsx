@@ -9,7 +9,7 @@ export default function ProfileView({user}){
     return(
         <div className="container">
       <div className="header">
-        {/* <span className="greeting">Hi {user.username}! |</span> */}
+        <span className="greeting">Hi {user.username}! |</span>
         <img className="profile-img" src={logo} alt="waving hand" />
         <p className="welcome-banner">WELCOME TO YOUR PROFILE</p>
       </div>
