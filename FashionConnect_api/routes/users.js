@@ -79,7 +79,6 @@ router.post('/users/profile', async (req, res) => {
     try {
       // Find the user by username
       const user = await User.findOne({ where: { username:username } });
-      console.log(user)
   
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
@@ -90,8 +89,7 @@ router.post('/users/profile', async (req, res) => {
       await user.save()
   
       // Return the user data in the response
-      res.json({ user:user, message: "User profile uodated succesfully" });
-      console.log(res.json({user}))
+      res.json({ user:user, message: "User profile updated succesfully" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server error' });
