@@ -1,39 +1,45 @@
 import "./EditProfile.css";
 import React, { useState,useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { UserContext } from '../../UserContext.jsx';
+// import { response } from "express";
 
 export default function EditProfile(){
     const [username, setUsername] = useState('');
     const [First_Name, setFirst_Name] = useState('');
     const [Last_Name, setLast_Name] = useState('');
-    
-
-
-
+    const { user, updateUser } = useContext(UserContext);
     const navigate = useNavigate();
+
+
+
+    
     const handleProfileEdit = async (e) => {
       e.preventDefault();
 
       try {
-        const result = await fetch(`http://localhost:3000/users/profile`,{
+        const info = await fetch(`http://localhost:3000/users/profile`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({username, First_Name, Last_Name}),
         });
-        console.log(result)
-        if (result.ok){
-            console.log("Update successfully")
-        }
-        navigate('/')
+        console.log(user)
+        
+       if (info.ok){
+        const updatedUser = await info.json();
+        updateUser(updatedUser.user)
+        navigate('/profile')
+       }
+       
+        
         } catch (error) {
         console.error(error);
         res.status(500).json({error: "Server error" });
         }
     };
-
+    console.log(user)
 
     return (
       <div className='login-form-container'>

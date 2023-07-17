@@ -87,12 +87,13 @@ router.post('/users/profile', async (req, res) => {
 
       user.First_Name = First_Name
       user.Last_Name = Last_Name
-      console.log(user)
+  
       await user.save()
-     
 
-    console.log(user)
-    res.json({ message:"User info updated", user: user});
+  
+      // Return the user data in the response
+      res.json({ user:user, message: "User profile updated succesfully" });
+
 
     } catch (error) {
       console.error(error);

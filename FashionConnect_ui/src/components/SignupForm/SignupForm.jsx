@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignupForm.css'
-import { UserContext } from '../../UserContext.js';
+import { UserContext } from '../../UserContext.jsx';
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');
