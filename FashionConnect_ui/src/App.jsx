@@ -9,12 +9,17 @@ import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
 
 function App() {
+
   const [user, setUser] = useState(() => {
+    try{
     // Retrieve the user data from storage or set it to null if not found
     const storedUser = localStorage.getItem('user');
+    
     return storedUser ? JSON.parse(storedUser) : null;
-  });
-
+  } catch (error) {
+    console.error('Error parsing user data:', error);
+    
+  }})
   const updateUser = (newUser) => {
     setUser(newUser);
   };
@@ -33,7 +38,7 @@ function App() {
             <Route path="/" element={user ? <Main /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/profile" element={<ProfileView  user={user}/>} />
+            <Route path="/profile" element={<ProfileView user={user} />} />
             <Route path="/editprofile" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>

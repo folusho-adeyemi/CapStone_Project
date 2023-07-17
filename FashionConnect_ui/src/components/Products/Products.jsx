@@ -9,7 +9,6 @@ export default function Products({products}){
     const [clickedCategory, setClickedCategory] = useState("");
 
     const handleClick = (category) => {
-        console.log(category)
       setClickedCategory(category);
     };
   

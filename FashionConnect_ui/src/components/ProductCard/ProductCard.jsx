@@ -2,8 +2,6 @@ import "./ProductCard.css";
 import React from "react";
 
 export default function ProductCard({product}){
-
-    console.log(product)
     return(
         <div className="products-container">
             <div className="product" key={product.ProductID}>

@@ -2,17 +2,14 @@ import "./EditProfile.css";
 import React, { useState,useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../../UserContext.jsx';
-// import { response } from "express";
 
 export default function EditProfile(){
     const [username, setUsername] = useState('');
     const [First_Name, setFirst_Name] = useState('');
     const [Last_Name, setLast_Name] = useState('');
+
     const { user, updateUser } = useContext(UserContext);
     const navigate = useNavigate();
-
-
-
     
     const handleProfileEdit = async (e) => {
       e.preventDefault();
@@ -25,12 +22,12 @@ export default function EditProfile(){
             },
             body: JSON.stringify({username, First_Name, Last_Name}),
         });
-        console.log(user)
+        
         
        if (info.ok){
         const updatedUser = await info.json();
-        updateUser(updatedUser.user)
-        navigate('/profile')
+        updateUser(updatedUser.user);
+        navigate('/')
        }
        
         
@@ -39,12 +36,12 @@ export default function EditProfile(){
         res.status(500).json({error: "Server error" });
         }
     };
-    console.log(user)
+
 
     return (
       <div className='login-form-container'>
           <div className='logo'>
-         {/* <img src={logo}></img> */}
+   
        </div>
         <form className="login-form" onSubmit={handleProfileEdit}>
           <h2>Edit Profile</h2>
