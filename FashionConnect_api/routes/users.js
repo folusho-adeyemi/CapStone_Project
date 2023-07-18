@@ -1,14 +1,15 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.js';
+import { Collection } from '../models/collections.js';
 import { Op } from 'sequelize';
 
 const router = express.Router();
 
 // Route for user registration
 router.post('/users', async (req, res) => {
-  const { username, password, email ,First_Name, Last_Name} = req.body;
-  console.log( username, password, email ,First_Name, Last_Name)
+  const { username, password, email, First_Name, Last_Name } = req.body;
+
 
   try {
     // Check if username or email already exists
@@ -26,7 +27,7 @@ router.post('/users', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create a new user
-    const newUser = await User.create({username, password: hashedPassword, email , First_Name, Last_Name});
+    const newUser = await User.create({ username, password: hashedPassword, email, First_Name, Last_Name });
 
     // Set the user in the session
     req.session.user = newUser;
@@ -45,7 +46,7 @@ router.post('/users/login', async (req, res) => {
 
   try {
     // Find the user by username
-    const user = await User.findOne({ where: { username:username } });
+    const user = await User.findOne({ where: { username: username } });
     console.log(user)
 
     if (!user) {
@@ -74,26 +75,28 @@ router.post('/users/login', async (req, res) => {
 
 //routes for profile changes
 router.post('/users/profile', async (req, res) => {
-    const { First_Name, Last_Name, username } = req.body;
-  
-    try {
-      // Find the user by username
-      const user = await User.findOne({ where: { username:username } });
-  
-      if (!user) {
-        return res.status(404).json({ error: 'User not found' });
-      }
+  const { user, First_Name, Last_Name, username } = req.body;
+  // const userId = req.body.user.id
+  try {
+    // Find the user by username
+    const activeUser = await User.findOne({ where: { username: username } });
 
-      user.First_Name = First_Name
-      user.Last_Name = Last_Name
-      await user.save()
-  
-      // Return the user data in the response
-      res.json({ user:user, message: "User profile updated succesfully" });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
+    // console.log(activeUser)
+
+    if (!activeUser) {
+      return res.status(404).json({ error: 'User not found' });
     }
-  });
+
+    activeUser.First_Name = First_Name
+    activeUser.Last_Name = Last_Name
+    await activeUser.save()
+
+    // Return the user data in the response
+    res.json({ user: activeUser, message: "User profile updated succesfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
 export default router;
