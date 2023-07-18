@@ -4,7 +4,7 @@ import { UserContext } from '../../UserContext.jsx';
 import './LoginForm.css';
 import logo from "../../apple-touch-icon.png";
 
-export default function LoginForm () {
+export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { updateUser } = useContext(UserContext);
@@ -14,7 +14,7 @@ export default function LoginForm () {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    
+
     try {
       // Make the login API request
       const response = await fetch(`http://localhost:3000/users/login`, {
@@ -25,7 +25,7 @@ export default function LoginForm () {
         body: JSON.stringify({ username, password }),
         credentials: 'include'
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         const loggedInUser = data.user;
@@ -47,9 +47,9 @@ export default function LoginForm () {
 
   return (
     <div className='login-form-container'>
-        <div className='logo'>
-       <img src={logo}></img>
-     </div>
+      <div className='logo'>
+        <img src={logo}></img>
+      </div>
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>
         <div className="form-group">

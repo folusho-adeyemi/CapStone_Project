@@ -23,15 +23,13 @@ const SignupForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({First_Name, Last_Name,username, email, password}),
+        body: JSON.stringify({ First_Name, Last_Name, username, email, password }),
         credentials: 'include'
       });
-        
+
       if (response.ok) {
         const data = await response.json();
         const loggedInUser = data.user;
-
-        console.log('Signup successful');
 
         // Reset form fields
         setFirst_Name('');
@@ -39,7 +37,7 @@ const SignupForm = () => {
         setUsername('');
         setEmail('');
         setPassword('');
-        
+
 
         // Update the user context
         updateUser(loggedInUser);

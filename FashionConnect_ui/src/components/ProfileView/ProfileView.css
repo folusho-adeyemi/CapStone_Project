@@ -7,6 +7,7 @@
   }
   
   .header {
+    background: linear-gradient(to bottom right, #af73db, #f779b7);
     text-align: center;
     margin-bottom: 20px;
   }
