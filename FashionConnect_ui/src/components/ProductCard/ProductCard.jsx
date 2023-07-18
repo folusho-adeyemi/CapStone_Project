@@ -1,8 +1,9 @@
 import "./ProductCard.css";
 import React from "react";
 
-export default function ProductCard({product}){
-    return(
+export default function ProductCard({ product }) {
+
+    return (
         <div className="products-container">
             <div className="product" key={product.ProductID}>
                 <img src={product.Image_URL} alt={product.Name} className="product-image" />

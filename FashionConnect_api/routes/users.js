@@ -1,7 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.js';
-import { Collection } from '../models/collections.js';
 import { Op } from 'sequelize';
 
 const router = express.Router();
@@ -72,14 +71,13 @@ router.post('/users/login', async (req, res) => {
 });
 
 //routes for profile changes
+
 router.post('/users/profile', async (req, res) => {
   const { user, First_Name, Last_Name, username } = req.body;
-  // const userId = req.body.user.id
+
   try {
     // Find the user by username
     const activeUser = await User.findOne({ where: { username: username } });
-
-    // console.log(activeUser)
 
     if (!activeUser) {
       return res.status(404).json({ error: 'User not found' });
@@ -95,6 +93,6 @@ router.post('/users/profile', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
-});
+  });
 
 export default router;
