@@ -83,7 +83,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/profile" element={<ProfileView user={user} />} />
-            <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} /> : null} />
+            <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} setCollections={setCollections}/> : null} />
             <Route path="/editprofile" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>
