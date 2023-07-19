@@ -134,4 +134,36 @@ router.post('/update-collections', async (req, res) => {
 });
 
 
+//routes for collections changes
+router.delete('/collections/:collectionID/products/:productID', async (req, res) => {
+  try {
+    const collectionID = req.params.collectionID;
+    const productID = req.params.productID;
+    console.log(collectionID,"i am product id", productID)
+
+    // Find the existing collection in the database
+    const collection = await Collection.findByPk(collectionID);
+    console.log("i am collection", collection)
+    // if (!collection) {
+    //   return res.status(404).json({ error: 'Collection not found' });
+    // }
+    // Check if the ProductID already exists in the collection's ProductID array
+    // if (!collection.ProductID.includes(productID)) {
+    //   return res.status(404).json({ error: 'Product not found in collection' });
+    // }
+
+    // To Remove the productID from the collection's ProductID array
+    collection.ProductID = collection.ProductID.filter((id) => id !== productID);
+
+    // To Save the updated collection to the database
+    await collection.save();
+
+
+    return res.status(200).json({ message: 'Product deletd from collection successfully' });
+  } catch (error) {
+    console.error('Error deleting product from collections:', error);
+    return res.status(500).json({ error: 'Failed to delete product from collection' });
+  }
+});
+
 export default router;
