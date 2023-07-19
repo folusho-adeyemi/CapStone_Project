@@ -4,7 +4,7 @@
       "Name": "Floral Print Maxi Dress",
       "Description": "A stunning floral print maxi dress with a flowy silhouette.",
       "Price": "$59.99",
-      "Image_URL": "https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg",
+      "Image_URL": "https://www.lulus.com/images/product/xlarge/6685821_677152.jpg?w=375&hdpi=1",
       "CategoryID": 1,
       "BrandID": "123",
       "ReviewID": "r1"
@@ -14,7 +14,7 @@
       "Name": "Leather Ankle Boots",
       "Description": "Trendy leather ankle boots with a sleek design and comfortable fit.",
       "Price": "$89.99",
-      "Image_URL": "https://example.com/images/ankle-boots.jpg",
+      "Image_URL": "https://www.famousfootwear.ca/blob/product-images/21000/71/04/08/710408_right_medium.jpg",
       "CategoryID": 2,
       "BrandID": "456",
       "ReviewID": "r2"
@@ -24,7 +24,7 @@
       "Name": "Quilted Crossbody Bag",
       "Description": "A chic quilted crossbody bag with a gold chain strap.",
       "Price": "$49.99",
-      "Image_URL": "https://example.com/images/crossbody-bag.jpg",
+      "Image_URL": "https://m.media-amazon.com/images/I/61VyPSnU-hL._AC_UY1000_.jpg",
       "CategoryID": 3,
       "BrandID": "789",
       "ReviewID": "r3"
@@ -34,7 +34,7 @@
       "Name": "Statement Earrings Set",
       "Description": "A set of stunning statement earrings to elevate any outfit.",
       "Price": "$29.99",
-      "Image_URL": "https://example.com/images/statement-earrings.jpg",
+      "Image_URL": "https://i5.walmartimages.com/asr/905a8064-e7f5-4923-b0e3-043aa32ff17a.3adfe9af7a4d9ef1d528891dfa83babc.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
       "CategoryID": 4,
       "BrandID": "1011",
       "ReviewID": "r4"
@@ -44,7 +44,7 @@
       "Name": "Striped Off-Shoulder Top",
       "Description": "A trendy off-shoulder top with stylish stripes.",
       "Price": "$39.99",
-      "Image_URL": "https://example.com/images/off-shoulder-top.jpg",
+      "Image_URL": "https://anninc.scene7.com/is/image/AN/594550_8818?$fullBpdp$",
       "CategoryID": 5,
       "BrandID": "1213",
       "ReviewID": "r5"
@@ -54,7 +54,7 @@
       "Name": "Embroidered Midi Dress",
       "Description": "A beautiful embroidered midi dress perfect for special occasions.",
       "Price": "$79.99",
-      "Image_URL": "https://example.com/images/embroidered-dress.jpg",
+      "Image_URL": "https://static.zara.net/photos///2023/I/0/1/p/6895/242/064/2/w/1920/6895242064_1_1_1.jpg?ts=1686126003045",
       "CategoryID": 1,
       "BrandID": "1415",
       "ReviewID": "r6"
@@ -64,7 +64,7 @@
       "Name": "Sneaker Wedges",
       "Description": "Comfortable and stylish sneaker wedges for a trendy look.",
       "Price": "$69.99",
-      "Image_URL": "https://example.com/images/sneaker-wedges.jpg",
+      "Image_URL": "https://i.ebayimg.com/images/g/n1EAAOSwlmxZbcJY/s-l1200.webp",
       "CategoryID": 2,
       "BrandID": "1617",
       "ReviewID": "r7"
@@ -74,7 +74,7 @@
       "Name": "Structured Tote Bag",
       "Description": "A structured tote bag with plenty of room for your essentials.",
       "Price": "$59.99",
-      "Image_URL": "https://example.com/images/tote-bag.jpg",
+      "Image_URL": "https://www.leatherology.com/media/webImg/059358-hover_fullsize.jpg?width=716",
       "CategoryID": 3,
       "BrandID": "1819",
       "ReviewID": "r8"
@@ -84,7 +84,7 @@
       "Name": "Layered Pendant Necklace",
       "Description": "A trendy layered pendant necklace to accessorize any outfit.",
       "Price": "$24.99",
-      "Image_URL": "https://example.com/images/necklace.jpg",
+      "Image_URL": "https://images.squarespace-cdn.com/content/v1/5c761f71523958068fa5b575/1558637854818-AYZR1T73UD4K29RD3E3H/Screen+Shot+2019-05-23+at+10.54.56+AM.png?format=1000w",
       "CategoryID": 4,
       "BrandID": "2021",
       "ReviewID": "r9"
@@ -94,7 +94,7 @@
       "Name": "Ruffled Blouse",
       "Description": "A feminine ruffled blouse that adds a touch of elegance.",
       "Price": "$49.99",
-      "Image_URL": "https://example.com/images/ruffled-blouse.jpg",
+      "Image_URL": "https://www.spurwesternwear.com/images/product/medium/3511.jpg",
       "CategoryID": 5,
       "BrandID": "2223",
       "ReviewID": "r10"
