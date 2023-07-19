@@ -17,6 +17,7 @@ export default function Main({ collections, setCollections }) {
       setProducts(data);
     } catch (error) {
       console.error(error);
+      throw error;
     }
   };
 

@@ -43,6 +43,7 @@ function App() {
         setCollections(data);
       } catch (error) {
         console.error('Error fetching collections:', error);
+        throw error;
       }
     };
 

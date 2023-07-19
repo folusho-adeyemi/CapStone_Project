@@ -38,7 +38,6 @@ export default function EditProfile() {
     }
   };
 
-  console.log(user)
   return (
     <div className='login-form-container'>
       <div className='logo'>
