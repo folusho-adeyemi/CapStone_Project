@@ -1,7 +1,7 @@
 import "./CollectionView.css";
 import React from "react";
 
-export default function CollectionView({product}) {
+export default function CollectionView({ product, handleDeleteProduct }) {
 
     return (
         <div className="products-container">
@@ -10,6 +10,7 @@ export default function CollectionView({product}) {
                 <div className="product-name"><h3>{product.Name}</h3></div>
                 {/* <div className="product-description"><p className="description">{product.Description}</p></div> */}
                 <div className="product-price"><p className="price">{product.Price}</p></div>
+                <button onClick={() => handleDeleteProduct(product.ProductID)}>Delete</button>
             </div>
         </div>
     )
