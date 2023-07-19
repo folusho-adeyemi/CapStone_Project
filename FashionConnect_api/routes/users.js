@@ -139,18 +139,10 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
   try {
     const collectionID = req.params.collectionID;
     const productID = req.params.productID;
-    console.log(collectionID,"i am product id", productID)
+    
 
     // Find the existing collection in the database
     const collection = await Collection.findByPk(collectionID);
-    console.log("i am collection", collection)
-    // if (!collection) {
-    //   return res.status(404).json({ error: 'Collection not found' });
-    // }
-    // Check if the ProductID already exists in the collection's ProductID array
-    // if (!collection.ProductID.includes(productID)) {
-    //   return res.status(404).json({ error: 'Product not found in collection' });
-    // }
 
     // To Remove the productID from the collection's ProductID array
     collection.ProductID = collection.ProductID.filter((id) => id !== productID);
