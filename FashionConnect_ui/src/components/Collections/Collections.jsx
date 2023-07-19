@@ -1,48 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard from '../ProductCard/ProductCard';
+import CollectionView from '../CollectionView/CollectionView';
 import './Collections.css';
 
-export default function Collections({ userId }) {
-    const [collections, setCollections] = useState([]);
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const fetchCollections = async () => {
-            try {
-                const user_collections = await fetch(`http://localhost:3000/collections/${userId}`);
-                const data = await user_collections.json();
-                setCollections(data);
-            } catch (error) {
-                console.error('Error fetching collections:', error);
-            }
-        };
-
-        fetchCollections();
-    }, [userId]);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const productPromises = collections.flatMap((collection) =>
-                collection.ProductID.map((productId) => fetchProductDetails(productId))
-            );
-            const finalProducts = await Promise.all(productPromises);
-            setProducts(finalProducts);
-        };
-
-        fetchProducts();
-    }, [collections]);
-
-    const fetchProductDetails = async (productId) => {
-        try {
-            const diff_products = await fetch(`http://localhost:3000/products/${productId}`);
-            const product = await diff_products.json();
-            return product;
-        } catch (error) {
-            console.error('Error fetching product details:', error);
-            return null;
-        }
-    };
+export default function Collections({collections, products}) {
 
     return (
         <div className="header">
@@ -59,7 +20,7 @@ export default function Collections({ userId }) {
                                 {products
                                     .filter((product) => collection.ProductID.includes(product.ProductID))
                                     .map((product) => (
-                                        <ProductCard key={product.ProductID} product={product} />
+                                        <CollectionView key={product.ProductID} product={product} />
                                     ))}
                             </div>
                         </div>
