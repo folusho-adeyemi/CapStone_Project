@@ -1,75 +1,74 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: #131921;
-    color: #ffffff;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #131921;
+  color: #ffffff;
+  z-index: 999;
+}
+
+.user-info {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.user-info span {
+  color: #ffffff;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.user-info button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 16px 8px;
   }
-  
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
   .user-info {
-    color: #ffffff;
-    display: flex;
-    align-items: center;
+    margin-top: 16px;
+    justify-content: center;
   }
-  
+
   .user-info span {
-    color: #ffffff;
-    margin-right: 8px;
-    font-size: 14px;
+    margin-right: 0;
   }
   
-  .user-info button {
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 14px;
-    cursor: pointer;
+  /* New Styles for Mobile */
+
+  .navbar {
+    justify-content: right;
+    background-color: #232f3e;
   }
-  
-  /* Responsive Styles */
-  
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      padding: 16px 8px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 16px;
-    }
-  
-    .nav-links li {
-      text-align: center;
-    }
-  
-    .user-info {
-      margin-top: 16px;
-      justify-content: center;
-    }
-  
-    .user-info span {
-      margin-right: 0;
-    }
-    
-    /* New Styles for Mobile */
-  
-    .navbar {
-      justify-content: right;
-      background-color: #232f3e;
-    }
-  
-    .nav-links {
-      flex-direction: row;
-      margin-top: 0;
-      gap: 12px;
-    }
+
+  .nav-links {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 12px;
   }
-  
+}
