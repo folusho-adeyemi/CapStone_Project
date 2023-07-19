@@ -2,27 +2,27 @@
     {
       "CategoryID": 1,
       "Name": "Dresses",
-      "Image_URL": "https://example.com/images/dresses.jpg"
+      "Image_URL": "https://www.monsoonlondon.com/dw/image/v2/BDLV_PRD/on/demandware.static/-/Sites-monsoon-master-catalog/default/dwb3fcb625/images/large/21_54077166_1.jpg?sw=663&sh=848&sm=cut"
     },
     {
       "CategoryID": 2,
       "Name": "Shoes",
-      "Image_URL": "https://example.com/images/shoes.jpg"
+      "Image_URL": "https://cld.accentuate.io/5353320710301/1663094662150/Madrid_Heathered-Grey_Feature-Float-1380.png?v=1669223444554&options=w1000"
     },
     {
       "CategoryID": 3,
       "Name": "Bags",
-      "Image_URL": "https://example.com/images/bags.jpg"
+      "Image_URL": "https://www.foodandwine.com/thmb/-PHIMp07_vYBQ3L8KZyoURtcdDs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/faw-best-insulated-grocery-bags-lifestyle-tout-7fc61e906312467b92925a6d66512721.jpg"
     },
     {
       "CategoryID": 4,
       "Name": "Accessories",
-      "Image_URL": "https://example.com/images/accessories.jpg"
+      "Image_URL": "https://media.vanityfair.com/photos/6398ef0348fea7b882b4fba1/16:9/w_2580,c_limit/VF-Best-Accessories-2022-Lead.jpg"
     },
     {
       "CategoryID": 5,
       "Name": "Tops",
-      "Image_URL": "https://example.com/images/tops.jpg"
+      "Image_URL": "https://www.byrdie.com/thmb/R3mmatXNPLP85ftlBcMCx4BYbDY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Crop-Tops-to-Shop-in-2023-tout-d3e62eb0ff484455ab5691b67a6ff7bd.jpg"
     }
   ]
   
