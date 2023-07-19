@@ -93,7 +93,6 @@ app.get('/products/:productId', async (req, res) => {
         res.json(data);
 
     } catch (error) {
-        console.error(error);
         res.status(500).json({ error: 'Server error' });
     }
 });
@@ -117,7 +116,6 @@ app.post('/collections', async (req, res) => {
 // Route to get collections by user ID
 app.get('/collections/:userId', async (req, res) => {
     const userId = req.params.userId;
-    console.log("I am the user id userid", userId)
     try {
         const collections = await Collection.findAll({
             where: { UserID: userId },
