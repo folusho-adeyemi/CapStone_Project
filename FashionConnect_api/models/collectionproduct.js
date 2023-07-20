@@ -8,7 +8,7 @@ export const CollectionProduct = sequelize.define('CollectionProduct', {
     autoIncrement: true,
   },
   CollectionID: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   ProductID: {
