@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { User } from '../models/user.js';
 import { Op } from 'sequelize';
 import { Collection } from '../models/collections.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router();
 
@@ -35,7 +36,6 @@ router.post('/users', async (req, res) => {
     // Return the user data in the response
     res.json({ user: newUser });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -66,7 +66,6 @@ router.post('/users/login', async (req, res) => {
     // Return the user data in the response
     res.json({ user });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -74,7 +73,7 @@ router.post('/users/login', async (req, res) => {
 //routes for profile changes
 
 router.post('/users/profile', async (req, res) => {
-  const { user, First_Name, Last_Name, username } = req.body;
+  const { First_Name, Last_Name, username } = req.body;
 
   try {
     // Find the user by username
@@ -91,7 +90,6 @@ router.post('/users/profile', async (req, res) => {
     // Return the user data in the response
     res.json({ user: activeUser, message: "User profile updated succesfully" });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -128,7 +126,6 @@ router.post('/update-collections', async (req, res) => {
     // Respond with a success message
     return res.status(200).json({ message: 'Collections updated successfully' });
   } catch (error) {
-    console.error('Error updating collections:', error);
     return res.status(500).json({ error: 'Failed to update collections in the database' });
   }
 });
@@ -139,7 +136,7 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
   try {
     const collectionID = req.params.collectionID;
     const productID = req.params.productID;
-    
+
 
     // Find the existing collection in the database
     const collection = await Collection.findByPk(collectionID);
@@ -148,13 +145,53 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
     collection.ProductID = collection.ProductID.filter((id) => id !== productID);
 
     // To Save the updated collection to the database
-    await collection.save();
+    await collection.update();
 
 
     return res.status(200).json({ message: 'Product deletd from collection successfully' });
   } catch (error) {
-    console.error('Error deleting product from collections:', error);
     return res.status(500).json({ error: 'Failed to delete product from collection' });
+  }
+});
+
+//route to create a new collection
+router.post('/collections', async (req, res) => {
+  try {
+    const { name, description, userId } = req.body;
+    const existingCollectionIDs = await Collection.findAll({
+      attributes: ['CollectionID'],
+    });
+
+    const collectionId = uuidv4();
+
+    // Create a new collection in the database
+    const newCollection = await Collection.create({
+      CollectionID: collectionId,
+      Name: name,
+      Description: description,
+      ProductID: [],
+      UserID: userId
+    });
+
+    return res.status(201).json({ message: 'Collection created successfully', collection: newCollection });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to create collection' });
+  }
+});
+
+
+//Route to delete collections
+router.delete('/collections/:collectionID', async (req, res) => {
+  try {
+    const collectionID = req.params.collectionID;
+    // Find the existing collection in the database
+    const collection = await Collection.findByPk(collectionID);
+
+    await collection.destroy();
+
+    return res.status(201).json({ message: 'Collection deleted successfully' });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to delete collection' });
   }
 });
 
