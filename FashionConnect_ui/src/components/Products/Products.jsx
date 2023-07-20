@@ -2,7 +2,7 @@ import "./Products.css"
 import React, { useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 
-export default function Products({ products }) {
+export default function Products({ products, collections, setCollections }) {
 
   const [searched, setSearched] = useState("");
   const regexp = new RegExp(searched, "i");
@@ -71,6 +71,8 @@ export default function Products({ products }) {
               product={product}
               productId={product.ProductID}
               key={idx}
+              collections={collections}
+              setCollections={setCollections}
             />
           ))
         ) : searched === "" && clickedCategory === "" ? (
@@ -79,6 +81,8 @@ export default function Products({ products }) {
               product={product}
               productId={product.ProductID}
               key={idx}
+              collections={collections}
+              setCollections={setCollections}
             />
           ))
         ) : (currSearch.map((product, idx) => (
@@ -86,6 +90,8 @@ export default function Products({ products }) {
             product={product}
             productId={product.ProductID}
             key={idx}
+            collections={collections}
+            setCollections={setCollections}
           />
         )))}
       </div>

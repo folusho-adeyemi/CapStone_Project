@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.js';
 import { Op } from 'sequelize';
+import { Collection } from '../models/collections.js';
 
 const router = express.Router();
 
@@ -46,7 +47,7 @@ router.post('/users/login', async (req, res) => {
   try {
     // Find the user by username
     const user = await User.findOne({ where: { username: username } });
-    console.log(user)
+
 
     if (!user) {
       return res.status(401).json({ error: 'Invalid username or password' });
@@ -93,6 +94,68 @@ router.post('/users/profile', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
-  });
+});
+
+//routes for collections changes
+router.post('/update-collections', async (req, res) => {
+  try {
+    const updatedCollections = req.body;
+
+    // Loop through the updatedCollections and update each collection in the database
+    for (const updatedCollection of updatedCollections) {
+      const { CollectionID, ProductID } = updatedCollection;
+
+      // Find the existing collection in the database
+      const collection = await Collection.findByPk(CollectionID);
+
+      if (!collection) {
+        return res.status(404).json({ error: 'Collection not found' });
+      }
+
+      //convert each productID to integers
+      const parsedProductIDs = ProductID.map((id) => (parseInt(id, 10)));
+
+      // Check if the ProductID already exists in the collection's ProductID array
+      if (!collection.ProductID.includes(ProductID)) {
+        // If not, add the new ProductID to the collection's ProductID array
+        collection.ProductID = [...parsedProductIDs];
+
+        // Save the updated collection to the database
+        await collection.save();
+      }
+    }
+
+    // Respond with a success message
+    return res.status(200).json({ message: 'Collections updated successfully' });
+  } catch (error) {
+    console.error('Error updating collections:', error);
+    return res.status(500).json({ error: 'Failed to update collections in the database' });
+  }
+});
+
+
+//routes for collections changes
+router.delete('/collections/:collectionID/products/:productID', async (req, res) => {
+  try {
+    const collectionID = req.params.collectionID;
+    const productID = req.params.productID;
+    
+
+    // Find the existing collection in the database
+    const collection = await Collection.findByPk(collectionID);
+
+    // To Remove the productID from the collection's ProductID array
+    collection.ProductID = collection.ProductID.filter((id) => id !== productID);
+
+    // To Save the updated collection to the database
+    await collection.save();
+
+
+    return res.status(200).json({ message: 'Product deletd from collection successfully' });
+  } catch (error) {
+    console.error('Error deleting product from collections:', error);
+    return res.status(500).json({ error: 'Failed to delete product from collection' });
+  }
+});
 
 export default router;

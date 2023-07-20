@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import { useState, useEffect } from "react";
 import Products from "../Products/Products";
 
-export default function Main() {
+export default function Main({ collections, setCollections }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,13 +17,14 @@ export default function Main() {
       setProducts(data);
     } catch (error) {
       console.error(error);
+      throw error;
     }
   };
 
   return (
     <div className="main">
       <NavBar />
-      <Products products={products} />
+      <Products products={products} collections={collections} setCollections={setCollections} />
 
     </div>
   )
