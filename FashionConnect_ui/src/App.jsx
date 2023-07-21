@@ -9,6 +9,8 @@ import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
 import Collections from './components/Collections/Collections';
 import CreateCollection from './components/CreateCollection/CreateCollection';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import ConfirmToken from './components/ConfirmToken/ConfirmToken';
 
 function App() {
 
@@ -34,7 +36,7 @@ function App() {
 
   const [collections, setCollections] = useState([]);
   const [products, setProducts] = useState([]);
-  const userId = user.id;
+  const userId = user ? user.id : null
 
   useEffect(() => {
     const fetchCollections = async () => {
@@ -81,10 +83,12 @@ function App() {
             <Route path="/" element={user ? <Main collections={collections} setCollections={setCollections} /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/profile" element={<ProfileView user={user} />} />
+            <Route path="/profile" element={user ? <ProfileView user={user} /> : null} />
             <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} setCollections={setCollections} /> : null} />
             <Route path="/editprofile" element={<EditProfile />} />
-            <Route path="/newcollection" element={<CreateCollection userId={userId}/>}/>
+            <Route path="/newcollection" element={user ? <CreateCollection userId={userId} /> : null} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ConfirmToken />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>
