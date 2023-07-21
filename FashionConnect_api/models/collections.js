@@ -3,9 +3,9 @@ import { sequelize } from '../database.js';
 
 export const Collection = sequelize.define('Collection', {
   CollectionID: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     primaryKey: true,
-    autoIncrement: true
+    autoIncrement: false
   },
   Name: {
     type: DataTypes.STRING,
@@ -17,6 +17,6 @@ export const Collection = sequelize.define('Collection', {
   },
   ProductID: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
-    allowNull: false
+    allowNull: true
   }
 });
