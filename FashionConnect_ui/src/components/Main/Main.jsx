@@ -16,7 +16,6 @@ export default function Main({ collections, setCollections }) {
       const data = await response.json();
       setProducts(data);
     } catch (error) {
-      console.error(error);
       throw error;
     }
   };
@@ -25,7 +24,6 @@ export default function Main({ collections, setCollections }) {
     <div className="main">
       <NavBar />
       <Products products={products} collections={collections} setCollections={setCollections} />
-
     </div>
   )
 }

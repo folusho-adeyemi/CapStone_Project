@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./AddToCollectionsPopup.css";
 import React, {useState} from "react";
 
@@ -19,25 +20,25 @@ export default function AddToCollectionsPopup({ collections, productID, onClose 
     
     const handleAddToCollection = () => {
     // To Update the collections with the new ProductID
-    const updatedCollections = collections.map((collection) => {
-        if (selectedCollections.includes(collection.CollectionID)) {
-            const productIDExists = collection.ProductID.includes(productID);
-      
-            // If the productID does not exist in the collection's ProductID array, add it
-            if (!productIDExists) {
-              return {
-                ...collection,
-                ProductID: [...collection.ProductID, productID],
-              };
+        const updatedCollections = collections.map((collection) => {
+            if (selectedCollections.includes(collection.CollectionID)) {
+                const productIDExists = collection.ProductID.includes(productID);
+        
+                // If the productID does not exist in the collection's ProductID array, add it
+                if (!productIDExists) {
+                    return {
+                        ...collection,
+                        ProductID: [...collection.ProductID, productID],
+                    };
+                }
             }
-          }
-          return collection;;
-    });
+            return collection;;
+        });
 
-    // To convert the productid's to integer
-    updatedCollections.forEach((collection) => {
-        collection.ProductID = collection.ProductID.map(Number);
-      });
+        // To convert the productid's to integer
+        updatedCollections.forEach((collection) => {
+            collection.ProductID = collection.ProductID.map(Number);
+        });
     
     
     const saveUpdatedCollectionsToDatabase = async (updatedCollections) => {
@@ -54,10 +55,7 @@ export default function AddToCollectionsPopup({ collections, productID, onClose 
             if (!response.ok) {
             throw new Error('Failed to update collections in the database');
             }
-        
-            console.log('Collections updated successfully!');
         } catch (error) {
-            console.error('Error updating collections:', error);
             throw error;
         
         }
@@ -90,6 +88,7 @@ export default function AddToCollectionsPopup({ collections, productID, onClose 
             ))}
           </ul>
           <button onClick={handleAddToCollection}>Add to Collection</button>
+          <Link to="/newcollection">Create a New Collection</Link>
           <button onClick={onClose}>Cancel</button>
         </div>
       );

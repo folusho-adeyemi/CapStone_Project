@@ -8,6 +8,7 @@ import SignupForm from './components/SignUpForm/SignupForm';
 import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
 import Collections from './components/Collections/Collections';
+import CreateCollection from './components/CreateCollection/CreateCollection';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
 
       return storedUser ? JSON.parse(storedUser) : null;
     } catch (error) {
-      console.error('Error parsing user data:', error);
+      throw error
 
     }
   })
@@ -42,7 +43,6 @@ function App() {
         const data = await user_collections.json();
         setCollections(data);
       } catch (error) {
-        console.error('Error fetching collections:', error);
         throw error;
       }
     };
@@ -68,7 +68,6 @@ function App() {
       const product = await diff_products.json();
       return product;
     } catch (error) {
-      console.error('Error fetching product details:', error);
       return null;
     }
   };
@@ -83,8 +82,9 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/profile" element={<ProfileView user={user} />} />
-            <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} setCollections={setCollections}/> : null} />
+            <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} setCollections={setCollections} /> : null} />
             <Route path="/editprofile" element={<EditProfile />} />
+            <Route path="/newcollection" element={<CreateCollection userId={userId}/>}/>
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>
