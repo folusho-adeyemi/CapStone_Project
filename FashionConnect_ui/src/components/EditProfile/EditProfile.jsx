@@ -20,7 +20,7 @@ export default function EditProfile() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ user, username, First_Name, Last_Name }),
+        body: JSON.stringify({ username, First_Name, Last_Name }),
       });
 
 

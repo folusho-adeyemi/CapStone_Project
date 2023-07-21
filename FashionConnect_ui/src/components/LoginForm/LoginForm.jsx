@@ -74,6 +74,9 @@ export default function LoginForm() {
         </div>
         <button type="submit">Login</button>
         <p>
+          <Link to="/forgotpassword">Forgot Password?</Link>
+        </p>
+        <p>
           New to the app? <Link to="/signup">Sign Up</Link>
         </p>
       </form>
