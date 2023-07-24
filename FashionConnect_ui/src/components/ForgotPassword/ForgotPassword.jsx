@@ -1,12 +1,10 @@
 import { useState } from "react"
 import "./ForgotPassword.css"
-import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router";
 
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState('');
-    const token = uuidv4();
     const navigate = useNavigate();
 
     const handleForgotPassword = async (e) => {
@@ -20,7 +18,7 @@ export default function ForgotPassword() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, token }),
+                body: JSON.stringify({ email}),
                 credentials: 'include'
             })
             if (response.ok) {
