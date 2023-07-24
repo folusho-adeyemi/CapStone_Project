@@ -197,7 +197,8 @@ router.delete('/collections/:collectionID', async (req, res) => {
 router.post('/forgotpassword/', async (req, res) => {
 
   try {
-    const { email, token } = req.body;
+    const { email} = req.body;
+    const token = uuidv4();
     // Find the existing user in the database
     const user = await User.findOne({ where: { email: email } });
 
