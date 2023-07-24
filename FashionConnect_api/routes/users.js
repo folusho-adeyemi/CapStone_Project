@@ -197,7 +197,8 @@ router.delete('/collections/:collectionID', async (req, res) => {
 router.post('/forgotpassword/', async (req, res) => {
 
   try {
-    const { email, token } = req.body;
+    const { email} = req.body;
+    const token = uuidv4();
     // Find the existing user in the database
     const user = await User.findOne({ where: { email: email } });
 
@@ -218,9 +219,9 @@ router.post('/forgotpassword/', async (req, res) => {
 
     sendEmail(receiverEmail, subject, text);
 
-    return res.status(201).json({ message: 'Collection deleted successfully', passwordAUTH: passwordAUTH });
+    return res.status(201).json({ message: 'Mail sent successfully', passwordAUTH: passwordAUTH });
   } catch (error) {
-    return res.status(500).json({ error: 'Failed to delete collection' });
+    return res.status(500).json({ error: 'Failed to Send Mail' });
   }
 });
 
@@ -240,9 +241,9 @@ router.post('/reset-password/', async (req, res) => {
 
     const activeUser = await User.findOne({ where: { id: userID } })
 
-    return res.status(201).json({ message: 'Collection deleted successfully', user: activeUser });
+    return res.status(201).json({ message: 'User confirmed', user: activeUser });
   } catch (error) {
-    return res.status(500).json({ error: 'Failed to delete collection' });
+    return res.status(500).json({ error: 'Failed to confirm user' });
   }
 });
 
@@ -261,9 +262,9 @@ router.post('/password-change/', async (req, res) => {
     //Update the password
     await user.update({ password: hashedPassword });
 
-    return res.status(201).json({ message: 'Collection deleted successfully', user: user });
+    return res.status(201).json({ message: 'Password changed successfully', user: user });
   } catch (error) {
-    return res.status(500).json({ error: 'Failed to delete collection' });
+    return res.status(500).json({ error: 'Failed to change password data' });
   }
 });
 
