@@ -2,28 +2,30 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CollectionView from '../CollectionView/CollectionView';
 import './Collections.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Collections({ collections, products, setCollections }) {
-   
+    const navigate = useNavigate();
+
     const getUniqueProducts = (productArray) => {
         const uniqueProducts = [];
         const productIDs = new Set();
-    
+
         for (const product of productArray) {
-          if (!productIDs.has(product.ProductID)) {
-            uniqueProducts.push(product);
-            productIDs.add(product.ProductID);
-          }
+            if (!productIDs.has(product.ProductID)) {
+                uniqueProducts.push(product);
+                productIDs.add(product.ProductID);
+            }
         }
-    
+
         return uniqueProducts;
-      };
-    
+    };
+
     // Remove duplicates from the products array based on ProductID
     const uniqueProductsArray = getUniqueProducts(products);
 
     const handleDeleteProduct = async (collectionID, productID) => {
-        
+
         try {
             // Send a request to the backend to delete the product from the collection
             const response = await fetch(`http://localhost:3000/collections/${collectionID}/products/${productID}`, {
@@ -32,7 +34,7 @@ export default function Collections({ collections, products, setCollections }) {
                     'Content-Type': 'application/json',
                 },
             });
-           
+
             if (response.ok) {
                 // If the deletion is successful, update the collections state
                 setCollections((prevCollections) => prevCollections.map((collection) =>
@@ -49,7 +51,7 @@ export default function Collections({ collections, products, setCollections }) {
     };
 
     const handleDeleteCollection = async (collectionID) => {
-        
+
         try {
             // Send a request to the backend to delete the product from the collection
             const response = await fetch(`http://localhost:3000/collections/${collectionID}`, {
@@ -58,6 +60,10 @@ export default function Collections({ collections, products, setCollections }) {
                     'Content-Type': 'application/json',
                 },
             });
+
+            if (response.ok) {
+                navigate("/")
+            }
         } catch (error) {
             throw error
         }
@@ -80,12 +86,12 @@ export default function Collections({ collections, products, setCollections }) {
                                     .filter((product) => collection.ProductID.includes(product.ProductID))
                                     .map((product) => (
                                         <CollectionView
-                                          key={product.ProductID} 
+                                            key={product.ProductID}
                                             product={product}
                                             handleDeleteProduct={() => handleDeleteProduct(collection.CollectionID, product.ProductID)} />
-                                ))}
+                                    ))}
                             </div>
-                            <button onClick={() =>{handleDeleteCollection(collection.CollectionID)}}>Delete Collection</button>
+                            <button onClick={() => { handleDeleteCollection(collection.CollectionID) }}>Delete Collection</button>
                         </div>
                     ))
                 )}

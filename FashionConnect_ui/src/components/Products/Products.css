@@ -5,6 +5,7 @@
 }
 
 .search-bar {
+  background-color:  hsl(291, 70%, 40%);;
   display: flex;
   align-items: center;
   width: 100%;

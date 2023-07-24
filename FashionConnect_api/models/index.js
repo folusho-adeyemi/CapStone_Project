@@ -4,6 +4,7 @@ import { Product } from './products.js';
 import { Review } from './reviews.js';
 import { Collection } from './collections.js';
 import { CollectionProduct } from './collectionproduct.js';
+import { ForgotPassword } from './ForgotPassword.js';
 
 User.hasMany(Collection, { as: 'collections', foreignKey: 'UserID' });
 Collection.belongsTo(User, { as: 'user', foreignKey: 'UserID' });
@@ -20,6 +21,9 @@ Review.belongsTo(Product, { as: 'product', foreignKey: 'ProductID' });
 Collection.belongsToMany(Product, { through: 'CollectionProduct', as: 'products', foreignKey: 'CollectionID', });
 Product.belongsToMany(Collection, { through: 'CollectionProduct', as: 'collections', foreignKey: 'ProductID', });
 
+ForgotPassword.belongsTo(User, { foreignKey: 'userID' });
+User.hasOne(ForgotPassword, { foreignKey: 'userID' });
+
 
 User.sync();
 Category.sync();
@@ -27,6 +31,7 @@ Product.sync();
 Review.sync();
 Collection.sync();
 CollectionProduct.sync();
+ForgotPassword.sync();
 
 
-export { User, Category, Product, Review, Collection };
+export { User, Category, Product, Review, Collection , ForgotPassword};

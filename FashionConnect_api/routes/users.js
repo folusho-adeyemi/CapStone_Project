@@ -3,7 +3,9 @@ import bcrypt from 'bcrypt';
 import { User } from '../models/user.js';
 import { Op } from 'sequelize';
 import { Collection } from '../models/collections.js';
+import { ForgotPassword } from '../models/ForgotPassword.js';
 import { v4 as uuidv4 } from 'uuid';
+import sendEmail from '../email.js';
 
 const router = express.Router();
 
@@ -145,7 +147,7 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
     collection.ProductID = collection.ProductID.filter((id) => id !== productID);
 
     // To Save the updated collection to the database
-    await collection.update();
+    await collection.save();
 
 
     return res.status(200).json({ message: 'Product deletd from collection successfully' });
@@ -158,10 +160,6 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
 router.post('/collections', async (req, res) => {
   try {
     const { name, description, userId } = req.body;
-    const existingCollectionIDs = await Collection.findAll({
-      attributes: ['CollectionID'],
-    });
-
     const collectionId = uuidv4();
 
     // Create a new collection in the database
@@ -194,5 +192,80 @@ router.delete('/collections/:collectionID', async (req, res) => {
     return res.status(500).json({ error: 'Failed to delete collection' });
   }
 });
+
+//Route to handle forgot password
+router.post('/forgotpassword/', async (req, res) => {
+
+  try {
+    const { email, token } = req.body;
+    // Find the existing user in the database
+    const user = await User.findOne({ where: { email: email } });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const userID = user.id
+
+    // Create a new ForgotPassword in the database
+    const passwordAUTH = await ForgotPassword.create({
+      userID: userID,
+      token: token
+    });
+    const receiverEmail = email;
+    const subject = "FORGOT-PASSWORD TOKEN";
+    const text = `Here is your token ${token}`;
+
+    sendEmail(receiverEmail, subject, text);
+
+    return res.status(201).json({ message: 'Collection deleted successfully', passwordAUTH: passwordAUTH });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to delete collection' });
+  }
+});
+
+//Route to confirm token 
+router.post('/reset-password/', async (req, res) => {
+
+  try {
+    const { token } = req.body;
+    // Find the existing userid in the token database
+    const record = await ForgotPassword.findOne({ where: { token: token } });
+
+    if (!record) {
+      return res.status(404).json({ error: 'Inavalid Token' });
+    }
+
+    const userID = record.userID
+
+    const activeUser = await User.findOne({ where: { id: userID } })
+
+    return res.status(201).json({ message: 'Collection deleted successfully', user: activeUser });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to delete collection' });
+  }
+});
+
+//Route to change password and update the database
+router.post('/password-change/', async (req, res) => {
+
+  try {
+    const { userID, password } = req.body;
+
+    // Find the existing userid in the user database
+    const user = await User.findOne({ where: { id: userID } });
+
+    //encrypt the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    //Update the password
+    await user.update({ password: hashedPassword });
+
+    return res.status(201).json({ message: 'Collection deleted successfully', user: user });
+  } catch (error) {
+    return res.status(500).json({ error: 'Failed to delete collection' });
+  }
+});
+
 
 export default router;
