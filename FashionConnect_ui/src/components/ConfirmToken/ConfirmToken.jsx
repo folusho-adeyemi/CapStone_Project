@@ -25,7 +25,7 @@ export default function ConfirmToken() {
             if (response.ok) {
                 const data = await response.json()
                 const userID = data.user.id
-              
+                // const newToken = data.passwordAUTH.token
                 setUserID(userID)
                 setShowPassword(true)
             } else {
