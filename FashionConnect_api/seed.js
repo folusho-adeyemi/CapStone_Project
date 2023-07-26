@@ -1,43 +1,32 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { User, Category, Product, Review, Collection } from './models/index.js';
-import { sequelize } from './database.js';
+import { Product } from './models/index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const userData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './seeders/users.json'), 'utf8'));
-const categoryData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './seeders/categories.json'), 'utf8'));
-const productData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './seeders/products.json'), 'utf8'));
-const reviewData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './seeders/reviews.json'), 'utf8'));
-const collectionData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './seeders/collections.json'), 'utf8'));
-
-const seedDatabase = async () => {
-  try {
-    // To Sync all models that aren't already in the database
-    await sequelize.sync({ alter: true });
-
-    // Then seed the User, Category, Product, Review, and Collection data
-    await User.bulkCreate(userData);
-    console.log('User data has been seeded!');
-
-    await Category.bulkCreate(categoryData);
-    console.log('Category data has been seeded!');
-
-    await Product.bulkCreate(productData);
-    console.log('Product data has been seeded!');
-
-    await Review.bulkCreate(reviewData);
-    console.log('Review data has been seeded!');
-
-    await Collection.bulkCreate(collectionData);
-    console.log('Collection data has been seeded!');
-  } catch (error) {
-    console.error('Error seeding data:', error);
-  } finally {
-    await sequelize.close();
+const url = 'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=500';
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '4ecf7b02f6mshe1fb9d190d9f5f0p1dc11cjsn12e4e06a025c',
+    'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
   }
 };
 
-seedDatabase();
+try {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  const { results } = data;
+
+  // Map the API response to match your database schema
+  const mappedProducts = results.map((result) => ({
+    Name: result.name,
+    Price: result.price?.value || 0, 
+    Image_URL: result.images[0]?.url || null,
+    CategoryName: result.categoryName,
+    BrandName: result.brandName,
+  }));
+
+  // Store the mapped products in the database using Sequelize's bulkCreate
+  await Product.bulkCreate(mappedProducts);
+
+  console.log('Products have been stored in the database successfully!');
+} catch (error) {
+  console.error('Error fetching or storing products:', error);
+}
