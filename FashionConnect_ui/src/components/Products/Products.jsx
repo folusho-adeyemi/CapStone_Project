@@ -17,7 +17,7 @@ export default function Products({ products, collections, setCollections }) {
     setSearched(searched);
   };
 
-  let currProds = clickedCategory ? products.filter((product) => product.category.Name === clickedCategory) : products
+  let currProds = clickedCategory ? products.filter((product) => product.CategoryName === clickedCategory) : products
   let currSearch = currProds.filter((product) => regexp.test(product.Name));
 
   return (
@@ -38,28 +38,18 @@ export default function Products({ products, collections, setCollections }) {
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Tops")}>
-            Tops
+          <button className="menu-btn" onClick={() => handleClick("Ladies")}>
+          Ladies
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Dresses")}>
-            Dresses
+          <button className="menu-btn" onClick={() => handleClick("Men")}>
+          Men
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Accessories")}>
-            Accessories
-          </button>
-        </li>
-        <li>
-          <button className="menu-btn" onClick={() => handleClick("Bags")}>
-            Bags
-          </button>
-        </li>
-        <li>
-          <button className="menu-btn" onClick={() => handleClick("Shoes")}>
-            Shoes
+          <button className="menu-btn" onClick={() => handleClick("Kids")}>
+          Kids
           </button>
         </li>
       </div>
