@@ -62,7 +62,7 @@ export default function Main({ collections, setCollections }) {
       // Send the new products to the backend for storage
       await sendNewProductsToBackend(mappedProducts);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      throw error;
     } 
   };
 
@@ -77,10 +77,10 @@ export default function Main({ collections, setCollections }) {
       });
 
       if (!response.ok) {
-        console.error('Failed to store products in the database');
+        throw error;
       }
     } catch (error) {
-      console.error('Error sending products to backend:', error);
+      throw error
     }
   };
 
