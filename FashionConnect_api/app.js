@@ -3,7 +3,7 @@ import session from 'express-session';
 import cors from 'cors';
 import morgan from 'morgan';
 import { sequelize } from './database.js';
-import { User, Category, Product, Review, Collection } from './models/index.js';
+import { User, Category, Product, Collection } from './models/index.js';
 import UserRoutes from './routes/users.js';
 import SequelizeStoreInit from 'connect-session-sequelize';
 
@@ -69,7 +69,6 @@ app.get('/categories', async (req, res) => {
 app.get('/products', async (req, res) => {
     try {
         const products = await Product.findAll({
-            include: [{ model: Category, as: 'category' }, { model: Review, as: 'reviews' }],
             order: [['createdAt', 'DESC']]
         });
         res.json(products);
@@ -125,7 +124,6 @@ app.get('/collections/:userId', async (req, res) => {
 
         res.json(collections);
     } catch (error) {
-        console.error(error);
         res.status(500).json({ error: 'Server error' });
     }
 });
@@ -139,5 +137,5 @@ sequelize
         });
     })
     .catch((error) => {
-        console.error('Unable to connect to the database:', error);
+        throw error;
     });
