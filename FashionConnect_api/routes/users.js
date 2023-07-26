@@ -1,5 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
+import { Product } from '../models/products.js';
 import { User } from '../models/user.js';
 import { Op } from 'sequelize';
 import { Collection } from '../models/collections.js';
@@ -268,5 +269,18 @@ router.post('/password-change/', async (req, res) => {
   }
 });
 
+router.post('/products', async (req, res) => {
+  try {
+    const newProducts = req.body;
+
+    // Use Sequelize's bulkCreate method to insert new products into the database
+    const createdProducts = await Product.bulkCreate(newProducts);
+
+    res.status(201).json({ message: 'New products stored in the database successfully', products: createdProducts });
+
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to store new products in the database' });
+  }
+});
 
 export default router;
