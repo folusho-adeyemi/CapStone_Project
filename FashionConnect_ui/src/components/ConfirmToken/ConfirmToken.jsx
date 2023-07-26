@@ -12,7 +12,6 @@ export default function ConfirmToken() {
         e.preventDefault();
 
         try {
-
             // Make the API request
             const response = await fetch(`http://localhost:3000/reset-password/`, {
                 method: 'POST',
@@ -25,7 +24,9 @@ export default function ConfirmToken() {
             if (response.ok) {
                 const data = await response.json()
                 const userID = data.user.id
+                
                 // const newToken = data.passwordAUTH.token
+
                 setUserID(userID)
                 setShowPassword(true)
             } else {
