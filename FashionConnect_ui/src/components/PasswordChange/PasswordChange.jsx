@@ -43,7 +43,7 @@ export default function PasswordChange({ userID }) {
     return (
         <div className="signup-form-container">
             <form className="signup-form" onSubmit={handleSubmit}>
-                <h2>Sign Up</h2>
+                <h2>Password Change</h2>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input
