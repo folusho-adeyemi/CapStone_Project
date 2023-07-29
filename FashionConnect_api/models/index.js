@@ -14,7 +14,6 @@ Product.belongsToMany(Collection, { through: 'CollectionProduct', as: 'collectio
 ForgotPassword.belongsTo(User, { foreignKey: 'userID' });
 User.hasOne(ForgotPassword, { foreignKey: 'userID' });
 
-
 User.sync();
 Category.sync();
 Product.sync();
