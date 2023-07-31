@@ -145,13 +145,15 @@ router.delete('/collections/:collectionID/products/:productID', async (req, res)
     const collection = await Collection.findByPk(collectionID);
 
     // To Remove the productID from the collection's ProductID array
-    collection.ProductID = collection.ProductID.filter((id) => id !== productID);
+    const updatedCollection = await collection.update({
+      ProductID: collection.ProductID.filter((id) => id !== parseInt(productID))
+    });
+    if (updatedCollection) {
+      res.status(200).json({ message: 'Product removed from the collection' });
+    } else {
 
-    // To Save the updated collection to the database
-    await collection.save();
-
-
-    return res.status(200).json({ message: 'Product deletd from collection successfully' });
+     res.status(200).json({ message: 'Product deletd from collection successfully' });
+    }
   } catch (error) {
     return res.status(500).json({ error: 'Failed to delete product from collection' });
   }
@@ -220,7 +222,20 @@ router.post('/forgotpassword/', async (req, res) => {
 
     sendEmail(receiverEmail, subject, text);
 
-    return res.status(201).json({ message: 'Mail sent successfully', passwordAUTH: passwordAUTH });
+  
+    const delayInSeconds = 30;
+    setTimeout(async () => {
+      try {
+        // Delete the token from the database
+        await ForgotPassword.destroy({ where: { token: token } });
+        console.log(`Token '${token}' deleted from the database.`);
+      } catch (error) {
+        console.error('Error deleting token from the database:', error);
+      }
+    }, delayInSeconds * 1000); 
+
+
+    return res.status(201).json({ message: 'Mail sent successfully', passwordAUTH: passwordAUTH , user:user});
   } catch (error) {
     return res.status(500).json({ error: 'Failed to Send Mail' });
   }
