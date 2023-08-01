@@ -11,7 +11,7 @@ import fetchAndStoreProducts from './seed.js';
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://fashion-connect-gwt7.vercel.app'],
     credentials: true,
     optionSuccessStatus: 200,
 }));
