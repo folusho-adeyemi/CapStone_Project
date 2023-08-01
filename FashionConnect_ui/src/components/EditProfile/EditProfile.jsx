@@ -15,7 +15,7 @@ export default function EditProfile() {
     e.preventDefault();
 
     try {
-      const updated_profile_info = await fetch(`http://localhost:3000/users/profile`, {
+      const updated_profile_info = await fetch(`https://fashion-connect-gwt7.vercel.app/users/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
