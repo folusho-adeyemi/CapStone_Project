@@ -2,7 +2,7 @@ import "./Products.css"
 import React, { useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 
-export default function Products({ products, collections, setCollections }) {
+export default function Products({ products, userId }) {
 
   const [searched, setSearched] = useState("");
   const regexp = new RegExp(searched, "i");
@@ -39,17 +39,17 @@ export default function Products({ products, collections, setCollections }) {
         </li>
         <li>
           <button className="menu-btn" onClick={() => handleClick("Ladies")}>
-          Ladies
+            Ladies
           </button>
         </li>
         <li>
           <button className="menu-btn" onClick={() => handleClick("Men")}>
-          Men
+            Men
           </button>
         </li>
         <li>
           <button className="menu-btn" onClick={() => handleClick("Kids")}>
-          Kids
+            Kids
           </button>
         </li>
       </div>
@@ -61,8 +61,7 @@ export default function Products({ products, collections, setCollections }) {
               product={product}
               productId={product.ProductID}
               key={idx}
-              collections={collections}
-              setCollections={setCollections}
+              userId={userId}
             />
           ))
         ) : searched === "" && clickedCategory === "" ? (
@@ -71,8 +70,7 @@ export default function Products({ products, collections, setCollections }) {
               product={product}
               productId={product.ProductID}
               key={idx}
-              collections={collections}
-              setCollections={setCollections}
+              userId={userId}
             />
           ))
         ) : (currSearch.map((product, idx) => (
@@ -80,8 +78,7 @@ export default function Products({ products, collections, setCollections }) {
             product={product}
             productId={product.ProductID}
             key={idx}
-            collections={collections}
-            setCollections={setCollections}
+            userId={userId}
           />
         )))}
       </div>
