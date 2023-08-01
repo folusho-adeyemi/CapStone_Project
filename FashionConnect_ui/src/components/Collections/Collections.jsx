@@ -4,7 +4,45 @@ import CollectionView from '../CollectionView/CollectionView';
 import './Collections.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function Collections({ collections, products, setCollections }) {
+export default function Collections({ userId }) {
+    const [collections, setCollections] = useState([]);
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchCollections = async () => {
+            try {
+                const user_collections = await fetch(`http://localhost:3000/collections/${userId}`);
+                const data = await user_collections.json();
+                setCollections(data);
+            } catch (error) {
+                throw error;
+            }
+        };
+
+        fetchCollections();
+    }, [userId]);
+
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const productPromises = collections.flatMap((collection) =>
+                collection.ProductID.map((productId) => fetchProductDetails(productId))
+            );
+            const finalProducts = await Promise.all(productPromises);
+            setProducts(finalProducts);
+        };
+
+        fetchProducts();
+    }, [collections]);
+
+    const fetchProductDetails = async (productId) => {
+        try {
+            const diff_products = await fetch(`http://localhost:3000/products/${productId}`);
+            const product = await diff_products.json();
+            return product;
+        } catch (error) {
+            return null;
+        }
+    };
     const navigate = useNavigate();
 
     const getUniqueProducts = (productArray) => {
