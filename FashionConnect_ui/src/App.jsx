@@ -4,7 +4,7 @@ import { UserContext } from './UserContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './components/Main/Main'
 import LoginForm from './components/LoginForm/LoginForm';
-import SignupForm from './components/SignUpForm/SignupForm';
+import SignupForm from './components/SignupForm/SignupForm';
 import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
 import Collections from './components/Collections/Collections';
