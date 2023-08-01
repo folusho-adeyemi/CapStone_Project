@@ -17,9 +17,9 @@ export default function AddToCollectionsPopup({ collections, productID, onClose 
           );
         }
       };
-    
+
+     // To Update the collections with the new ProductID
     const handleAddToCollection = () => {
-    // To Update the collections with the new ProductID
         const updatedCollections = collections.map((collection) => {
             if (selectedCollections.includes(collection.CollectionID)) {
                 const productIDExists = collection.ProductID.includes(productID);
@@ -61,10 +61,9 @@ export default function AddToCollectionsPopup({ collections, productID, onClose 
         }
         };
           
-        // To Call a function to save the updated collections to the database
+        //Save the updated collections to the database
         saveUpdatedCollectionsToDatabase(updatedCollections);
     
-        // To Close the popup
         onClose();
       };
    

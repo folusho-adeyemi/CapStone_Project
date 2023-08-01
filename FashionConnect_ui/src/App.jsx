@@ -4,7 +4,7 @@ import { UserContext } from './UserContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './components/Main/Main'
 import LoginForm from './components/LoginForm/LoginForm';
-import SignupForm from './components/SignUpForm/SignupForm';
+import SignupForm from './components/SignupForm/SignupForm';
 import EditProfile from './components/EditProfile/EditProfile';
 import ProfileView from './components/ProfileView/ProfileView';
 import Collections from './components/Collections/Collections';
@@ -79,7 +79,6 @@ function App() {
       <UserContext.Provider value={{ user, updateUser }}>
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={ <Main /> } /> */}
             <Route path="/" element={user ? <Main collections={collections} setCollections={setCollections} /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
