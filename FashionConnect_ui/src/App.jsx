@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     const fetchCollections = async () => {
       try {
-        const user_collections = await fetch(`http://localhost:3000/collections/${userId}`);
+        const user_collections = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${userId}`);
         const data = await user_collections.json();
         setCollections(data);
       } catch (error) {
@@ -66,7 +66,7 @@ function App() {
 
   const fetchProductDetails = async (productId) => {
     try {
-      const diff_products = await fetch(`http://localhost:3000/products/${productId}`);
+      const diff_products = await fetch(`https://fashion-connect-gwt7.vercel.app/products/${productId}`);
       const product = await diff_products.json();
       return product;
     } catch (error) {

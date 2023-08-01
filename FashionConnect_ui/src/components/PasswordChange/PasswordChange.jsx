@@ -18,7 +18,7 @@ export default function PasswordChange({ userID }) {
         }
         try {
             // Make the  API request
-            const response = await fetch(`http://localhost:3000/password-change`, {
+            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/password-change`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

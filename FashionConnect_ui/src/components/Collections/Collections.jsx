@@ -28,7 +28,7 @@ export default function Collections({ collections, products, setCollections }) {
 
         try {
             // Send a request to the backend to delete the product from the collection
-            const response = await fetch(`http://localhost:3000/collections/${collectionID}/products/${productID}`, {
+            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${collectionID}/products/${productID}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function Collections({ collections, products, setCollections }) {
 
         try {
             // Send a request to the backend to delete the product from the collection
-            const response = await fetch(`http://localhost:3000/collections/${collectionID}`, {
+            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${collectionID}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

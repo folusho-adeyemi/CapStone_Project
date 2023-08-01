@@ -15,7 +15,7 @@ export default function Main({ collections, setCollections }) {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:3000/products');
+      const response = await fetch('hhttps://fashion-connect-gwt7.vercel.app/products');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -68,7 +68,7 @@ export default function Main({ collections, setCollections }) {
 
   const sendNewProductsToBackend = async (newProducts) => {
     try {
-      const response = await fetch('http://localhost:3000/products', {
+      const response = await fetch('https://fashion-connect-gwt7.vercel.app/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
