@@ -228,7 +228,6 @@ router.post('/forgotpassword/', async (req, res) => {
       try {
         // Delete the token from the database
         await ForgotPassword.destroy({ where: { token: token } });
-        console.log(`Token '${token}' deleted from the database.`);
       } catch (error) {
         console.error('Error deleting token from the database:', error);
       }
