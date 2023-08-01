@@ -33,46 +33,7 @@ function App() {
     // Save the user data to storage whenever the user state changes
     localStorage.setItem('user', JSON.stringify(user));
   }, [user]);
-
-  const [collections, setCollections] = useState([]);
-  const [products, setProducts] = useState([]);
   const userId = user ? user.id : null
-
-  useEffect(() => {
-    const fetchCollections = async () => {
-      try {
-        const user_collections = await fetch(`http://localhost:3000/collections/${userId}`);
-        const data = await user_collections.json();
-        setCollections(data);
-      } catch (error) {
-        throw error;
-      }
-    };
-
-    fetchCollections();
-  }, [userId]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const productPromises = collections.flatMap((collection) =>
-        collection.ProductID.map((productId) => fetchProductDetails(productId))
-      );
-      const finalProducts = await Promise.all(productPromises);
-      setProducts(finalProducts);
-    };
-
-    fetchProducts();
-  }, [collections]);
-
-  const fetchProductDetails = async (productId) => {
-    try {
-      const diff_products = await fetch(`http://localhost:3000/products/${productId}`);
-      const product = await diff_products.json();
-      return product;
-    } catch (error) {
-      return null;
-    }
-  };
 
   return (
     <div className="app">
@@ -80,15 +41,15 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* <Route path="/" element={ <Main /> } /> */}
-            <Route path="/" element={user ? <Main collections={collections} setCollections={setCollections} /> : <LoginForm />} />
+            <Route path="/" element={user ? <Main userId={userId} /> : <LoginForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/profile" element={user ? <ProfileView user={user} /> : null} />
-            <Route path="/collections/:userId" element={user ? <Collections collections={collections} products={products} setCollections={setCollections} /> : null} />
+            <Route path="/collections/:userId" element={user ? <Collections userId={userId} /> : null} />
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/newcollection" element={user ? <CreateCollection userId={userId} /> : null} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ConfirmToken />} />
+            <Route path="/reset-password" element={user ? <ConfirmToken email={user.email} /> : null} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>

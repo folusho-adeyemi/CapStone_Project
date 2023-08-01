@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import "./ForgotPassword.css"
 import { useNavigate } from "react-router";
+import { UserContext } from '../../UserContext.jsx';
 
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState('');
+    const { updateUser } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleForgotPassword = async (e) => {
@@ -18,13 +20,16 @@ export default function ForgotPassword() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email}),
+                body: JSON.stringify({ email }),
                 credentials: 'include'
             })
             if (response.ok) {
                 const data = await response.json()
-                const userID = data.passwordAUTH.userID
-                const newToken = data.passwordAUTH.token
+
+                const loggedInUser = data.user;
+
+                // Update the user context
+                updateUser(loggedInUser);
 
                 navigate('/reset-password');
             } else {
@@ -51,7 +56,7 @@ export default function ForgotPassword() {
                         required
                     />
                 </div>
-                <button  type="submit">Confirm Email</button>
+                <button type="submit">Confirm Email</button>
             </form>
         </div>
     )

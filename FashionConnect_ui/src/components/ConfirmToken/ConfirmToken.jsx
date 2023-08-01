@@ -4,6 +4,7 @@ import PasswordChange from "../PasswordChange/PasswordChange";
 
 
 export default function ConfirmToken({ email }) {
+
     const [token, setToken] = useState("")
     const [showPassword, setShowPassword] = useState(false)
     const [userID, setUserID] = useState("")
@@ -89,7 +90,7 @@ export default function ConfirmToken({ email }) {
 
     return (
         <div>
-            {!showPassword && ( 
+            {!showPassword && (
                 <div className='reset-form-container'>
                     <form className="reset-form" onSubmit={handleSubmit}>
                         <h2 className="main-title">Forgot Password?</h2>
