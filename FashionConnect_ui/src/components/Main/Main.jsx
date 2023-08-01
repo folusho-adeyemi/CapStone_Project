@@ -12,7 +12,7 @@ export default function Main({ userId }) {
 
   const fetchProducts = async (page) => {
     try {
-      const response = await axios.get(`http://localhost:3000/products?page=${page}&pageSize=${pageSize}`);
+      const response = await axios.get(`hhttps://fashion-connect-gwt7.vercel.app/products?page=${page}&pageSize=${pageSize}`);
       const data = response.data;
       return data;
 

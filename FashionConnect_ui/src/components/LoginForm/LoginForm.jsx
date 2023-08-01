@@ -17,7 +17,7 @@ export default function LoginForm() {
 
     try {
       // Make the login API request
-      const response = await fetch(`http://localhost:3000/users/login`, {
+      const response = await fetch(`https://fashion-connect-gwt7.vercel.app/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

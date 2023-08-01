@@ -11,7 +11,7 @@ export default function CreateCollection({userId}){
         event.preventDefault();
 
         // Make a POST request to create a new collection
-        const response = await fetch('http://localhost:3000/collections', {
+        const response = await fetch('https://fashion-connect-gwt7.vercel.app/collections', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
