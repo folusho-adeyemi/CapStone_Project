@@ -6,6 +6,7 @@ import { sequelize } from './database.js';
 import { User, Category, Product, Collection } from './models/index.js';
 import UserRoutes from './routes/users.js';
 import SequelizeStoreInit from 'connect-session-sequelize';
+import fetchAndStoreProducts from './seed.js';
 
 const app = express();
 
@@ -67,14 +68,48 @@ app.get('/categories', async (req, res) => {
 
 // Route to get all products, with associated category and reviews
 app.get('/products', async (req, res) => {
-    try {
-        const products = await Product.findAll({
-            order: [['createdAt', 'DESC']]
-        });
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
+    
+const { page, pageSize } = req.query;
+  try {
+    // Parse page and pageSize values to integers
+    const pageNumber = parseInt(page);
+    const size = parseInt(pageSize);
+
+    // Validate if page and pageSize are valid positive integers
+    if (isNaN(pageNumber) || isNaN(size) || pageNumber <= 0 || size <= 0) {
+      return res.status(400).json({ error: 'Invalid page or pageSize parameters.' });
     }
+
+    // Calculate the offset based on the page and pageSize to implement pagination
+    const offset = (pageNumber - 1) * size;
+
+    // Fetch products from the database using Sequelize's findAll method with pagination
+    let products = await Product.findAll({
+      offset,
+      limit: size,
+      order: [['createdAt', 'DESC']],
+    });
+
+    // Check if there are enough products to fulfill the page size
+    if (products.length < size) {
+      // If the database is empty or doesn't have enough products, fetch and store initial products
+      if (products.length === 0) {
+        products = await fetchAndStoreProducts(pageNumber, size);
+      } else {
+        // Fetch more data from the external API and store it in the database
+        const additionalData = await fetchAndStoreProducts(pageNumber, size - products.length);
+        // The additionalData should be the already stored products in the database
+        // You can directly append them to the products array
+        products.push(...additionalData);
+      }
+    }
+
+    // Respond with the products data from the database (including the additional data) as JSON
+    res.status(200).json(products);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    res.status(500).json({ error: 'Failed to fetch products from the database.' });
+  }
 });
 
 app.get('/products/:productId', async (req, res) => {
