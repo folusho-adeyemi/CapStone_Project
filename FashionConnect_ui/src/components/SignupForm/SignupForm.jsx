@@ -18,7 +18,7 @@ const SignupForm = () => {
 
     try {
       // Make the signup API request
-      const response = await fetch(`https://fashion-connect-gwt7.vercel.app/users`, {
+      const response = await fetch(`https://fashionconnectapi.onrender.com/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

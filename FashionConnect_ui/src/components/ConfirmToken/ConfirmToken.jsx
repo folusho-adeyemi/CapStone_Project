@@ -32,7 +32,7 @@ export default function ConfirmToken({ email }) {
         try {
 
             // Make the API request
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/reset-password/`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/reset-password/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export default function ConfirmToken({ email }) {
         try {
 
             // Make the API request
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/forgotpassword/`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/forgotpassword/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

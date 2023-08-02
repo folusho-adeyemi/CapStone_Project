@@ -18,7 +18,7 @@ export default function PasswordChange({ userID }) {
         }
         try {
             // Make the  API request
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/password-change`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/password-change`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

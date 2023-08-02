@@ -10,7 +10,7 @@ export default function AddToCollectionsPopup({ productID, userId, onClose }) {
   useEffect(() => {
     const fetchCollections = async () => {
       try {
-        const user_collections = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${userId}`);
+        const user_collections = await fetch(`https://fashionconnectapi.onrender.com/collections/${userId}`);
         const data = await user_collections.json();
         setCollections(data);
       } catch (error) {
@@ -59,7 +59,7 @@ export default function AddToCollectionsPopup({ productID, userId, onClose }) {
     const saveUpdatedCollectionsToDatabase = async (updatedCollections) => {
 
       try {
-        const response = await fetch('https://fashion-connect-gwt7.vercel.app/update-collections', {
+        const response = await fetch('https://fashionconnectapi.onrender.com/update-collections', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -108,4 +108,3 @@ export default function AddToCollectionsPopup({ productID, userId, onClose }) {
     </div>
   );
 }
-

@@ -3,6 +3,7 @@ import "./NavBar.css";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext.jsx";
 import { Link } from "react-router-dom";
+import logo from "../../logo-transparent-png.png";
 
 
 export default function NavBar() {
@@ -16,10 +17,13 @@ export default function NavBar() {
 
   return (
     <div className="navbar">
+      <div className='logo'>
+        <img src={logo}></img>
+      </div>
       <div className="user-info">
         {user ? (
           <>
-            <span style={{ color: "white" }}>Hi {user.username}! |</span>
+            <span style={{ color: "black" }}>Hi {user.username}! |</span>
             <button onClick={handleLogout}>Logout</button>
             <Link to="/profile">Profile </Link>
             <p> || </p>
