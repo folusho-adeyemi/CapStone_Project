@@ -10,7 +10,7 @@ export default function Collections({ userId }) {
     useEffect(() => {
         const fetchCollections = async () => {
             try {
-                const user_collections = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${userId}`);
+                const user_collections = await fetch(`https://fashionconnectapi.onrender.com/collections/${userId}`);
                 const data = await user_collections.json();
                 setCollections(data);
             } catch (error) {
@@ -36,7 +36,7 @@ export default function Collections({ userId }) {
 
     const fetchProductDetails = async (productId) => {
         try {
-            const diff_products = await fetch(`https://fashion-connect-gwt7.vercel.app/products/${productId}`);
+            const diff_products = await fetch(`https://fashionconnectapi.onrender.com/products/${productId}`);
             const product = await diff_products.json();
             return product;
         } catch (error) {
@@ -66,7 +66,7 @@ export default function Collections({ userId }) {
 
         try {
             // Send a request to the backend to delete the product from the collection
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${collectionID}/products/${productID}`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/collections/${collectionID}/products/${productID}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export default function Collections({ userId }) {
 
         try {
             // Send a request to the backend to delete the product from the collection
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/collections/${collectionID}`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/collections/${collectionID}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

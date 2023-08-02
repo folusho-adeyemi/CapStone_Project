@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../UserContext.jsx';
 import './LoginForm.css';
-import logo from "../../apple-touch-icon.png";
+import logo from "../../logo-png.png";
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -17,7 +17,7 @@ export default function LoginForm() {
 
     try {
       // Make the login API request
-      const response = await fetch(`https://fashion-connect-gwt7.vercel.app/users/login`, {
+      const response = await fetch(`https://fashionconnectapi.onrender.com/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

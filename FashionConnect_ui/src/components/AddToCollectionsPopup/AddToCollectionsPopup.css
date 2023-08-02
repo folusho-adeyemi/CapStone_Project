@@ -1,5 +1,5 @@
 .add-to-collection-popup {
-    position: fixed;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -52,7 +52,7 @@
   
   /* Optional: Add a backdrop for the popup */
   .add-to-collection-popup-backdrop {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;

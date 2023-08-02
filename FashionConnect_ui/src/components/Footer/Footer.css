@@ -1,0 +1,87 @@
+/* .aboutus {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0;
+    color: white;
+  }
+  .logos {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: right;
+    margin-left: 100px;
+  }
+  .footer {
+    display: flex;
+  
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+  
+    background-color: #2c4047;
+    margin: 0 auto;
+    width: 70%;
+    border-style: solid;
+    border-color: gray;
+    height: 350px;
+    text-align: left;
+    padding: 40px;
+    color: white;
+  }
+  .logosize {
+    width: 300px;
+    height: 300px;
+    margin: 0px 105px 0px 50px;
+    vertical-align: middle;
+  }
+  .about {
+    width: 600px;
+    word-wrap: break-word;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  .contactus {
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .contacting {
+    margin-top: 20px;
+    align-items: center;
+    text-align: left;
+    margin-left: 260px;
+    background-color: #2c4047;
+    margin-right: 260px;
+    color: white;
+    padding-left: 30px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+  }
+  .socials {
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .happy {
+    justify-content: right;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  } */

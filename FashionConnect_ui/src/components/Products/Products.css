@@ -1,7 +1,24 @@
+.products{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .search-comp {
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align components horizontally at the center */
+  gap: 2rem;
+}
+
+.search-comp {
+  margin-bottom: 10px; /* Add some spacing between the search and menu components */
 }
 
 .search-bar {
@@ -16,6 +33,7 @@
 }
 
 .search-text-input {
+  width: 100%;
   margin-top: 50px;
   padding: 1px;
   background-color: black;
@@ -47,8 +65,8 @@
 .menu {
   margin-top: 50px; /* Adjust the margin-top value as desired */
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  /* justify-content: space-between;
+  margin-bottom: 20px; */
 }
 
 .menu li {

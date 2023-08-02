@@ -11,7 +11,7 @@ import fetchAndStoreProducts from './seed.js';
 const app = express();
 
 app.use(cors({
-    origin: ['https://fashion-connect-gwt7.vercel.app','http://localhost:5173'],
+    origin: 'https://fashionconnectapi.onrender.com',
     credentials: true,
     optionSuccessStatus: 200,
 }));
@@ -70,6 +70,7 @@ app.get('/categories', async (req, res) => {
 app.get('/products', async (req, res) => {
     
 const { page, pageSize } = req.query;
+
   try {
     // Parse page and pageSize values to integers
     const pageNumber = parseInt(page);

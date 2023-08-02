@@ -15,7 +15,7 @@ export default function ForgotPassword() {
         try {
 
             // Make the API request
-            const response = await fetch(`https://fashion-connect-gwt7.vercel.app/forgotpassword/`, {
+            const response = await fetch(`https://fashionconnectapi.onrender.com/forgotpassword/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

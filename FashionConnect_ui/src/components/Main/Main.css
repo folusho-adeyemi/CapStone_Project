@@ -1,7 +1,23 @@
-.main {
+.main-view {
     padding-top: 80px; /* Adjust the value to provide enough spacing below the NavBar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    width: 100%;
   }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Apply a black and white filter to the video */
+  #videoPlayer {
+    filter: grayscale(100%);
+  }
+  
+  /* Add a blur effect on hover */
+  #videoPlayer:hover {
+    filter: blur(5px);
+    transition: filter 0.3s ease; 
+   }
