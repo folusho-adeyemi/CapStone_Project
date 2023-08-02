@@ -166,7 +166,7 @@ app.get('/collections/:userId', async (req, res) => {
 sequelize
     .sync({ alter: true })
     .then(() => {
-        const port = 3000;
+        const port = 5432;
         app.listen(port, () => {
             console.log(`App is listening on port ${port}`);
         });
