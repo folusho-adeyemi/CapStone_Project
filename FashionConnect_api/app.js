@@ -11,11 +11,6 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 
-app.use(cors({
-    origin: '*',
-    credentials: true,
-    optionsSuccessStatus: 200,
-}));
 app.use(express.json()); // Middleware for parsing JSON bodies from HTTP requests
 app.use(morgan('dev'));
 
