@@ -11,7 +11,7 @@ import fetchAndStoreProducts from './seed.js';
 const app = express();
 
 app.use(cors({
-    origin: 'https://fashionconnectapi.onrender.com',
+    origin: ['http://localhost:5173/','https://fashionconnectapi.onrender.com'],
     credentials: true,
     optionSuccessStatus: 200,
 }));
