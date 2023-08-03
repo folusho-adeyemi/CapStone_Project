@@ -7,13 +7,14 @@ import { User, Category, Product, Collection } from './models/index.js';
 import UserRoutes from './routes/users.js';
 import SequelizeStoreInit from 'connect-session-sequelize';
 import fetchAndStoreProducts from './seed.js';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 
 app.use(cors({
-    origin: 'https://fashionconnectapi.onrender.com',
+    origin: '*',
     credentials: true,
-    optionSuccessStatus: 200,
+    optionsSuccessStatus: 200,
 }));
 app.use(express.json()); // Middleware for parsing JSON bodies from HTTP requests
 app.use(morgan('dev'));
@@ -44,6 +45,12 @@ app.use(UserRoutes);
 app.get('/__vite_ping', (req, res) => {
     res.status(200).json({ message: 'Vite server is running' });
 });
+
+app.use('*', createProxyMiddleware({
+    target: 'https://fashionconnectapi.onrender.com',
+    changeOrigin: true,
+    secure: false,
+  }));
 
 // Route to get all users
 app.get('/users', async (req, res) => {
