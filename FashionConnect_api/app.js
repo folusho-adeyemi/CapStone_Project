@@ -11,9 +11,9 @@ import fetchAndStoreProducts from './seed.js';
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:5173/','https://fashionconnectapi.onrender.com'],
+    origin: '*',
     credentials: true,
-    optionSuccessStatus: 200,
+    optionsSuccessStatus: 200,
 }));
 app.use(express.json()); // Middleware for parsing JSON bodies from HTTP requests
 app.use(morgan('dev'));
