@@ -11,7 +11,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 app.use(cors({
-  origin: 'https://fashion-connect.vercel.app',
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST','DELETE'], 
   credentials: true,
 }));
