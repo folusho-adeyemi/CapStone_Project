@@ -10,6 +10,12 @@ import fetchAndStoreProducts from './seed.js';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST'], // Include other allowed HTTP methods, if necessary
+  credentials: true, // If your frontend sends credentials (e.g., cookies), set this to true
+}));
+
 
 app.use(express.json()); // Middleware for parsing JSON bodies from HTTP requests
 app.use(morgan('dev'));
