@@ -104,7 +104,7 @@ export default function ConfirmToken({ email }) {
                                 required
                             />
                         </div>
-                        <button className="button" type="submit">Reset Password</button>
+                        <button className="reset-button" type="submit">Reset Password</button>
                         {!showResendButton ? (
                             <div className="countdown-container">
                                 <div className="countdown-circle">

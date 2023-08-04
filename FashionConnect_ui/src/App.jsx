@@ -14,6 +14,26 @@ import ConfirmToken from './components/ConfirmToken/ConfirmToken';
 
 function App() {
 
+  useEffect(() => {
+    // To Initialize the Facebook SDK with my App ID
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '198473312947810',
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    // To Load the Facebook SDK asynchronously
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }, []);
+
   const [user, setUser] = useState(() => {
     try {
       // Retrieve the user data from storage or set it to null if not found

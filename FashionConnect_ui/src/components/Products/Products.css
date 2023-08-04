@@ -1,28 +1,35 @@
-.products{
+.products {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .search-comp {
+  color: hsl(209, 85%, 52%);
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
+
+.search-bar[type="submit"] {
+  background-color: hsl(209, 85%, 52%);
+}
+
 .menu {
   display: flex;
   justify-content: center;
-  align-items: center; /* Align components horizontally at the center */
+  align-items: center;
   gap: 2rem;
 }
 
 .search-comp {
-  margin-bottom: 10px; /* Add some spacing between the search and menu components */
+  margin-bottom: 10px;
 }
 
 .search-bar {
-  background-color:  hsl(291, 70%, 40%);;
+  background-color: hsl(209, 85%, 52%);
+  ;
   display: flex;
   align-items: center;
   width: 100%;
@@ -63,10 +70,9 @@
 }
 
 .menu {
-  margin-top: 50px; /* Adjust the margin-top value as desired */
+  margin-top: 50px;
   display: flex;
-  /* justify-content: space-between;
-  margin-bottom: 20px; */
+  
 }
 
 .menu li {
@@ -74,11 +80,19 @@
 }
 
 .menu-btn {
-  background-color: hsl(291, 70%, 40%);
+  background-color: hsl(209, 85%, 52%);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   padding: 8px 16px;
+}
+
+.menu-btn:hover {
+  background-color: #000000;
+}
+
+.menu-btn-clicked {
+  background-color: black;
 }
 
 .products-grid {

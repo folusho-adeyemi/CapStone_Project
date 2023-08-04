@@ -102,9 +102,9 @@ export default function AddToCollectionsPopup({ productID, userId, onClose }) {
           </li>
         ))}
       </ul>
-      <button onClick={handleAddToCollection}>Add to Collection</button>
-      <Link to="/newcollection">Create a New Collection</Link>
-      <button onClick={onClose}>Cancel</button>
+      <button className="add-to-collection" onClick={handleAddToCollection}>Add to Collection</button>
+      <button className="cancel" onClick={onClose}>Cancel</button>
+      <Link className="new-collection" to="/newcollection">Create a New Collection</Link>
     </div>
   );
 }

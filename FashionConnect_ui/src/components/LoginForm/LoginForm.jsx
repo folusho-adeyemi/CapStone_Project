@@ -72,7 +72,7 @@ export default function LoginForm() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="login-button" type="submit">Login</button>
         <p>
           <Link to="/forgotpassword">Forgot Password?</Link>
         </p>

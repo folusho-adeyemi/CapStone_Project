@@ -65,7 +65,7 @@
   margin: 0;
 }
 
-.product-price {
+.product-price .price{
   color: white;
   font-size: 1rem;
   margin: 5px 0;
