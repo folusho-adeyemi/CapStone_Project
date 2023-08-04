@@ -10,12 +10,13 @@ import fetchAndStoreProducts from './seed.js';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
-
 app.use(cors({
-    origin: '*',
-    credentials: true,
-    optionsSuccessStatus: 200,
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST','DELETE'], 
+  credentials: true,
 }));
+
+
 app.use(express.json()); // Middleware for parsing JSON bodies from HTTP requests
 app.use(morgan('dev'));
 
@@ -46,11 +47,6 @@ app.get('/__vite_ping', (req, res) => {
     res.status(200).json({ message: 'Vite server is running' });
 });
 
-app.use('*', createProxyMiddleware({
-    target: 'https://fashionconnectapi.onrender.com',
-    changeOrigin: true,
-    secure: false,
-  }));
 
 // Route to get all users
 app.get('/users', async (req, res) => {
@@ -107,7 +103,7 @@ const { page, pageSize } = req.query;
         // Fetch more data from the external API and store it in the database
         const additionalData = await fetchAndStoreProducts(pageNumber, size - products.length);
         // The additionalData should be the already stored products in the database
-        // You can directly append them to the products array
+        // append them to the products array
         products.push(...additionalData);
       }
     }
