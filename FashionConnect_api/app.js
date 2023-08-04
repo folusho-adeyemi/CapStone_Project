@@ -12,8 +12,8 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 const app = express();
 app.use(cors({
   origin: 'http://localhost:5173',
-  methods: ['GET', 'POST','DELETE'], // Include other allowed HTTP methods, if necessary
-  credentials: true, // If your frontend sends credentials (e.g., cookies), set this to true
+  methods: ['GET', 'POST','DELETE'], 
+  credentials: true,
 }));
 
 
@@ -103,7 +103,7 @@ const { page, pageSize } = req.query;
         // Fetch more data from the external API and store it in the database
         const additionalData = await fetchAndStoreProducts(pageNumber, size - products.length);
         // The additionalData should be the already stored products in the database
-        // You can directly append them to the products array
+        // append them to the products array
         products.push(...additionalData);
       }
     }
