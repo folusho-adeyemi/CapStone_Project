@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CollectionView from '../CollectionView/CollectionView';
 import './Collections.css';
 import { useNavigate } from 'react-router-dom';
+import ClickToTweetButton from '../ClickToTweet/ClickToTweet';
 
 export default function Collections({ userId }) {
     const [collections, setCollections] = useState([]);
@@ -117,9 +118,9 @@ export default function Collections({ userId }) {
                 ) : (
                     collections.map((collection) => (
                         <div className="collection" key={collection.CollectionID}>
-                            <h3 className='collection-name'>{collection.Name}</h3>
-                            <p className='collection-description'>{collection.Description}</p>
-                            <div className="products">
+                            <h3 className='collection-name'><strong>Title: </strong>{collection.Name}</h3>
+                            <p className='collection-description'><strong>Description: </strong>{collection.Description}</p>
+                            <div className="products-coll">
                                 {uniqueProductsArray
                                     .filter((product) => collection.ProductID.includes(product.ProductID))
                                     .map((product) => (
@@ -129,12 +130,14 @@ export default function Collections({ userId }) {
                                             handleDeleteProduct={() => handleDeleteProduct(collection.CollectionID, product.ProductID)} />
                                     ))}
                             </div>
-                            <button onClick={() => { handleDeleteCollection(collection.CollectionID) }}>Delete Collection</button>
+                            <button className='button-collection' onClick={() => { handleDeleteCollection(collection.CollectionID) }}>Delete Collection</button>
+                            <ClickToTweetButton tweetText={"Hey Guys!\n I just created a clothing collection!! \n Go check my Facebook Page to view them!"} />
+
                         </div>
                     ))
                 )}
             </div>
-            <Link to="/">Go Home</Link>
+            <Link to="/" className='link-to-home'>Go Home</Link>
         </div>
     );
 }

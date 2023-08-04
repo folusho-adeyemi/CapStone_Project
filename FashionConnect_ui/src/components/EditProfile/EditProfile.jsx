@@ -75,9 +75,9 @@ export default function EditProfile() {
             required
           />
         </div>
-        <button type="submit">Edit</button>
+        <button className="edit" type="submit">Click to Edit</button>
         <p>
-          <Link to="/">Home</Link>
+          <Link to="/">Click to go Home</Link>
         </p>
       </form>
     </div>

@@ -26,29 +26,29 @@ export default function Products({ products, userId }) {
         <form className="search-text-input" method="get-search-input" onChange={(event) => handleSearched(event)}>
           <input className="search-text" type="text" required />
           <div className="button" id="s-cover">
-            <button className="search" type="submit">SEARCH
+            <button className="search-bar" type="submit">SEARCH
             </button>
           </div>
         </form>
       </div>
       <div className="menu">
         <li>
-          <button className="menu-btn" onClick={() => handleClick("")}>
+          <button className={`menu-btn ${clickedCategory === '' ? 'menu-btn-clicked' : ''}`} onClick={() => handleClick("")}>
             All Categories
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Ladies")}>
+          <button className={`menu-btn ${clickedCategory === 'Ladies' ? 'menu-btn-clicked' : ''}`} onClick={() => handleClick("Ladies")}>
             Ladies
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Men")}>
+          <button className={`menu-btn ${clickedCategory === 'Men' ? 'menu-btn-clicked' : ''}`} onClick={() => handleClick("Men")}>
             Men
           </button>
         </li>
         <li>
-          <button className="menu-btn" onClick={() => handleClick("Kids")}>
+          <button className={`menu-btn ${clickedCategory === 'Kids' ? 'menu-btn-clicked' : ''}`} onClick={() => handleClick("Kids")}>
             Kids
           </button>
         </li>

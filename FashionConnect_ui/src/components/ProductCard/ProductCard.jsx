@@ -24,7 +24,8 @@ return(
           </div>
           <div className="product-info">
             <div className="product-name"><h3>{product.Name}</h3></div>
-            <div className="product-price"><p className="price">{product.Price}</p></div>
+            <div className="product-brand"><h4>{product.BrandName}</h4></div>
+            <div className="product-price"><p className="price">$ {product.Price}</p></div>
           </div>
         </div>
       );

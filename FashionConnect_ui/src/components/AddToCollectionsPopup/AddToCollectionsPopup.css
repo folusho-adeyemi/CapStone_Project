@@ -1,66 +1,119 @@
 .add-to-collection-popup {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    padding: 20px;
-    max-width: 400px;
-    z-index: 999;
-  }
-  
-  .add-to-collection-popup h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .add-to-collection-popup ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .add-to-collection-popup li {
-    margin-bottom: 10px;
-  }
-  
-  .add-to-collection-popup label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .add-to-collection-popup input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .add-to-collection-popup button {
-    display: block;
-    background-color:  hsl(291, 70%, 40%);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 15px;
-  }
-  
-  /* Optional: Add a backdrop for the popup */
-  .add-to-collection-popup-backdrop {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-  }
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 400px;
+  z-index: 999;
+}
 
-.collection-name{
-    color: black;
+.add-to-collection-popup h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.add-to-collection-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-to-collection-popup li {
+  margin-bottom: 10px;
+}
+
+.add-to-collection-popup label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-to-collection-popup input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.add-to-collection-popup button {
+  display: block;
+  background-color: hsl(209, 85%, 52%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.cancel {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel:hover {
+  background-color: red;
+}
+
+
+/* Optional: Add a backdrop for the popup */
+.add-to-collection-popup-backdrop {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.collection-name {
+  color: black;
+}
+
+.new-collection {
+  color: #fcfcfc;
+  display: flex;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.new-collection:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+
+.add-to-collection {
+  color: #fcfcfc;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.add-to-collection:hover {
+  background-color: #000000;
+  color: #fff;
 }

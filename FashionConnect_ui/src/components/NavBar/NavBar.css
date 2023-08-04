@@ -21,13 +21,13 @@ Add a new CSS class for the logo */
   align-items: center;
   justify-content: flex-start;
   padding: 16px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #e7e8e9;
+  color: #ffffff;
   z-index: 999;
 }
 
 .user-info {
-  color: #000000;
+  color: #ffffff;
   display: flex;
   align-items: center;
 }
@@ -78,7 +78,7 @@ Add a new CSS class for the logo */
 
   .navbar {
     justify-content: right;
-    background-color: #f5f5f5;
+    background-color: #232f3e;
   }
 
   .nav-links {

@@ -1,51 +1,68 @@
 .header {
-    padding: 20px;
-    background-color: #f2f2f2;
-  }
-  
-  .header-title {
-    color: #333;
-  }
-  
-  .collections-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .collection {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .collection-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-  }
+  padding: 20px;
+  background-color: #f2f2f2;
+}
 
-  .collection-header {
-    font-size: 50px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .collection-description {
-    margin-bottom: 10px;
-    color: #666;
-  }
-  
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .go-home-link {
-    display: block;
-    margin-top: 20px;
-    color: #333;
-  }
-  
+.header-title {
+  color: #000000;
+}
+
+.collections-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.products-coll {
+  display: flex;
+  flex-direction: row;
+}
+
+.collection {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.collection-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.collection-header {
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+}
+
+.collection-description {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+
+
+.go-home-link {
+  display: block;
+  margin-top: 20px;
+  color: #333;
+}
+
+.link-to-home {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.link-to-home:hover {
+  background-color: #007bff;
+  color: #fff;
+}
