@@ -12,7 +12,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 const app = express();
 app.use(cors({
   origin: 'http://localhost:5173',
-  methods: ['GET', 'POST'], // Include other allowed HTTP methods, if necessary
+  methods: ['GET', 'POST','DELETE'], // Include other allowed HTTP methods, if necessary
   credentials: true, // If your frontend sends credentials (e.g., cookies), set this to true
 }));
 
