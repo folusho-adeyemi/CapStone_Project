@@ -28,9 +28,11 @@
 }
 
 .login-form .form-group label {
-  margin-right: 10px;
+  margin-right: 0px;
   font-weight: bold;
   text-align: left;
+  display: flex;
+  justify-self: unset;
   flex: 1;
 }
 

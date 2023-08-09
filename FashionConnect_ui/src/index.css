@@ -29,7 +29,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: transparent url("./assets/video.mp4") 
+  background: rgb(7,179,235);
+  background: -moz-radial-gradient(circle, rgba(7,179,235,0.9877622377622378) 9%, rgba(0,0,0,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(7,179,235,0.9877622377622378) 9%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(circle, rgba(7,179,235,0.9877622377622378) 9%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07b3eb",endColorstr="#000000",GradientType=1);;
 }
 /* background: transparent url("https://images.unsplash.com/photo-1594734415578-00fc9540929b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80")  */
 
