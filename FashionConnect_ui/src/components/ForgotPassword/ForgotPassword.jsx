@@ -56,7 +56,7 @@ export default function ForgotPassword() {
                         required
                     />
                 </div>
-                <button type="submit">Confirm Email</button>
+                <button className="forgot-password-button" type="submit">Confirm Email</button>
             </form>
         </div>
     )

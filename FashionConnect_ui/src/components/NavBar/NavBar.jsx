@@ -22,13 +22,12 @@ export default function NavBar() {
       </div>
       <div className="user-info">
         {user ? (
-          <>
-            <span style={{ color: "black" }}>Hi {user.username}! |</span>
-            <button onClick={handleLogout}>Logout</button>
-            <Link to="/profile">Profile </Link>
-            <p> || </p>
-            <Link to="/collections/:userId">Collection</Link>
-          </>
+          <div className="profile">
+            <span style={{ color: "black" }}>Hi {user.username}! </span>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button className="profile-click"><Link to="/profile"> Profile  </Link> </button>
+           <button className="collection-click"><Link to="/collections/:userId"> Collection  </Link></button>
+          </div>
         ) : (
           <Link to="/login">Login</Link>
         )}

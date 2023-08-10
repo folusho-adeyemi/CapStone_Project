@@ -11,7 +11,7 @@ export default function CollectionView({ product, handleDeleteProduct }) {
                 <img src={product.Image_URL} alt={product.Name} className="collection-image" />
                 <div className="collection-name"><h3>{product.Name}</h3></div>
                 <button className="button-collection" onClick={() => handleDeleteProduct(product.ProductID)}>Remove</button>
-                <ShareButton imageUrl={product.Image_URL} caption={product.Name} />
+                <ShareButton imageUrl={product.Image_URL} />
             </div>
         </div>
     )

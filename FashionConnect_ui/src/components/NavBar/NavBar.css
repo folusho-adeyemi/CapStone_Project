@@ -10,8 +10,21 @@ Add a new CSS class for the logo */
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
-
-
+.collection-click{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: aliceblue;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.profile-click{
+  width: 100%;
+  background-color: aliceblue;
+}
 .navbar {
   position: fixed;
   top: 0;
@@ -26,28 +39,6 @@ Add a new CSS class for the logo */
   z-index: 999;
 }
 
-.user-info {
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.user-info span {
-
-  color: #000000;
-  margin-right: 8px;
-  font-size: 14px;
-}
-
-.user-info button {
-  background-color: transparent;
-  border: none;
-  color: #000000;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Responsive Styles */
 
 @media (max-width: 768px) {
   .navbar {
@@ -89,3 +80,57 @@ Add a new CSS class for the logo */
 }
 
 
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.profile span {
+  color: black;
+  font-weight: bold;
+}
+
+.logout-button {
+  background-color: #4fa6d9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style for the login link */
+.user-info a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.user-info a:hover {
+  text-decoration: underline;
+}
